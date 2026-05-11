@@ -51,9 +51,20 @@ DELAY_BETWEEN_CALLS = 0.5  # seconds
 
 
 def load_voices() -> dict:
-    """Returns the parsed voices.json: {voices: {adam: {voice_id, settings}, bella: {...}}}"""
+    """Returns the parsed voices.json: {voices: {adam: {elevenlabs_id, settings}, bella: {...}}}"""
     with open(DEFAULT_VOICES_JSON) as f:
-        return json.load(f)
+        data = json.load(f)
+    missing = [
+        name
+        for name, cfg in data.get("voices", {}).items()
+        if not cfg.get("elevenlabs_id")
+    ]
+    if missing:
+        raise ValueError(
+            f"voices.json: missing 'elevenlabs_id' for voice(s): {', '.join(missing)}. "
+            "Each voice entry must have an 'elevenlabs_id' field."
+        )
+    return data
 
 
 def generate_one(
@@ -73,7 +84,7 @@ def generate_one(
 
     rendered = render_for_tts(job.body_md)
 
-    voice_id = voice_config["voice_id"]
+    voice_id = voice_config["elevenlabs_id"]
     settings = voice_config.get("settings", {})
 
     last_error: Optional[str] = None
