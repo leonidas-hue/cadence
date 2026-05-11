@@ -1,0 +1,25 @@
+# Secrets — never commit
+.env
+.env.local
+*.key
+
+# Generated audio — don't commit. Regenerate with python -m audio.generate
+audio_output/
+audio/pilot_output/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+.DS_Store
+
+# OS
+Thumbs.db

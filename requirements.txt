@@ -1,0 +1,13 @@
+# Cadence audio pipeline dependencies.
+#
+# Install with:
+#   pip install -r requirements.txt
+#
+# Or with a virtual environment (recommended):
+#   python3 -m venv .venv
+#   source .venv/bin/activate     # on macOS/Linux
+#   .venv\Scripts\activate        # on Windows
+#   pip install -r requirements.txt
+
+elevenlabs>=2.45.0
+python-dotenv>=1.0.0

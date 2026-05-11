@@ -1,0 +1,560 @@
+{
+  "version": "0.1.0",
+  "name": "Cadence Diagnostic Intake",
+  "description": "Routes users into one of four protocol variants (A/B/C/D) based on validated and self-designed assessments.",
+  "sections": [
+    {
+      "id": "pedt5",
+      "title": "Premature Ejaculation Diagnostic Tool (PEDT-5)",
+      "description": "Five quick questions used by clinicians worldwide to assess ejaculation control. Answer honestly — there are no right answers, and your responses stay on this device.",
+      "internal_note": "Validated 5-item screening tool from Symonds et al. (2007). Each item scored 0-4. Total ≥11 indicates PE; 9-10 probable PE; ≤8 unlikely.",
+      "scoring": {
+        "method": "sum",
+        "thresholds": {
+          "no_pe": [
+            0,
+            8
+          ],
+          "probable_pe": [
+            9,
+            10
+          ],
+          "pe": [
+            11,
+            20
+          ]
+        }
+      },
+      "questions": [
+        {
+          "id": "pedt5_1",
+          "text": "How difficult is it for you to delay ejaculation?",
+          "type": "single_select",
+          "options": [
+            {
+              "label": "Not difficult at all",
+              "value": 0
+            },
+            {
+              "label": "Somewhat difficult",
+              "value": 1
+            },
+            {
+              "label": "Moderately difficult",
+              "value": 2
+            },
+            {
+              "label": "Very difficult",
+              "value": 3
+            },
+            {
+              "label": "Extremely difficult",
+              "value": 4
+            }
+          ]
+        },
+        {
+          "id": "pedt5_2",
+          "text": "Do you ejaculate before you want to?",
+          "type": "single_select",
+          "options": [
+            {
+              "label": "Almost never or never",
+              "value": 0
+            },
+            {
+              "label": "Less than half the time",
+              "value": 1
+            },
+            {
+              "label": "About half the time",
+              "value": 2
+            },
+            {
+              "label": "More than half the time",
+              "value": 3
+            },
+            {
+              "label": "Almost always or always",
+              "value": 4
+            }
+          ]
+        },
+        {
+          "id": "pedt5_3",
+          "text": "Do you ejaculate with very little stimulation?",
+          "type": "single_select",
+          "options": [
+            {
+              "label": "Almost never or never",
+              "value": 0
+            },
+            {
+              "label": "Less than half the time",
+              "value": 1
+            },
+            {
+              "label": "About half the time",
+              "value": 2
+            },
+            {
+              "label": "More than half the time",
+              "value": 3
+            },
+            {
+              "label": "Almost always or always",
+              "value": 4
+            }
+          ]
+        },
+        {
+          "id": "pedt5_4",
+          "text": "Do you feel frustrated because of ejaculating before you want to?",
+          "type": "single_select",
+          "options": [
+            {
+              "label": "Not at all",
+              "value": 0
+            },
+            {
+              "label": "Slightly",
+              "value": 1
+            },
+            {
+              "label": "Moderately",
+              "value": 2
+            },
+            {
+              "label": "Very",
+              "value": 3
+            },
+            {
+              "label": "Extremely",
+              "value": 4
+            }
+          ]
+        },
+        {
+          "id": "pedt5_5",
+          "text": "How concerned are you that your time to ejaculation leaves your partner sexually unfulfilled?",
+          "type": "single_select",
+          "options": [
+            {
+              "label": "Not at all concerned",
+              "value": 0
+            },
+            {
+              "label": "Slightly concerned",
+              "value": 1
+            },
+            {
+              "label": "Moderately concerned",
+              "value": 2
+            },
+            {
+              "label": "Very concerned",
+              "value": 3
+            },
+            {
+              "label": "Extremely concerned",
+              "value": 4
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hypertonic",
+      "title": "Pelvic Floor Tension Self-Assessment",
+      "description": "These questions help us check whether your pelvic floor is chronically tense — a common pattern that's often missed and that responds to a different kind of training. There's no right answer; just be honest.",
+      "internal_note": "Identifies signs of a chronically tense (hypertonic) pelvic floor. Standard Kegel exercises can worsen symptoms in this profile, so this section is the safety-critical routing input. ≥3 yes responses indicates hypertonic likely.",
+      "scoring": {
+        "method": "sum_yes",
+        "thresholds": {
+          "hypertonic_unlikely": [
+            0,
+            2
+          ],
+          "hypertonic_likely": [
+            3,
+            7
+          ]
+        }
+      },
+      "questions": [
+        {
+          "id": "hyper_1",
+          "text": "Do you frequently notice yourself clenching your pelvic, glute, or abdominal muscles when stressed or anxious?",
+          "type": "yes_no"
+        },
+        {
+          "id": "hyper_2",
+          "text": "Do you experience tension, tightness, or discomfort in your perineum, groin, or lower pelvis (not during sex)?",
+          "type": "yes_no"
+        },
+        {
+          "id": "hyper_3",
+          "text": "Do you have noticeably tight hip flexors or limited hip mobility (e.g. difficulty squatting deep, sitting cross-legged comfortably)?",
+          "type": "yes_no"
+        },
+        {
+          "id": "hyper_4",
+          "text": "Do you experience urinary urgency, frequency, or a feeling of incomplete emptying?",
+          "type": "yes_no"
+        },
+        {
+          "id": "hyper_5",
+          "text": "Do you experience discomfort, numbness, or tension after sitting for long periods (e.g. >30 minutes)?",
+          "type": "yes_no"
+        },
+        {
+          "id": "hyper_6",
+          "text": "Do you experience pain, tension, or a 'painful contraction' feeling during or shortly after ejaculation?",
+          "type": "yes_no"
+        },
+        {
+          "id": "hyper_7",
+          "text": "When you try to push your pelvic floor outward (as if starting to urinate), is it difficult or unfamiliar to do?",
+          "type": "yes_no"
+        }
+      ]
+    },
+    {
+      "id": "masturbation",
+      "title": "Masturbation & Stimulus Patterns",
+      "description": "Masturbation habits — pace, grip, and stimulus type — shape how your body responds during sex. These questions help us understand your patterns and tailor your protocol. Skip any that don't apply.",
+      "internal_note": "Identifies porn-conditioned and high-intensity masturbation patterns associated with sensitization (Variant D).",
+      "questions": [
+        {
+          "id": "mast_porn_freq",
+          "text": "How often do you currently use pornography?",
+          "type": "single_select",
+          "options": [
+            {
+              "label": "Never",
+              "value": 0
+            },
+            {
+              "label": "Occasionally (less than weekly)",
+              "value": 1
+            },
+            {
+              "label": "Weekly",
+              "value": 2
+            },
+            {
+              "label": "Several times per week",
+              "value": 3
+            },
+            {
+              "label": "Daily",
+              "value": 4
+            },
+            {
+              "label": "Multiple times per day",
+              "value": 5
+            }
+          ]
+        },
+        {
+          "id": "mast_grip",
+          "text": "When you masturbate, how would you describe your grip pressure?",
+          "type": "single_select",
+          "options": [
+            {
+              "label": "Light",
+              "value": 0
+            },
+            {
+              "label": "Medium",
+              "value": 1
+            },
+            {
+              "label": "Firm",
+              "value": 2
+            },
+            {
+              "label": "Very firm / tight grip",
+              "value": 3
+            }
+          ]
+        },
+        {
+          "id": "mast_pace",
+          "text": "When you masturbate, how would you describe your pace?",
+          "type": "single_select",
+          "options": [
+            {
+              "label": "Slow and varied",
+              "value": 0
+            },
+            {
+              "label": "Medium",
+              "value": 1
+            },
+            {
+              "label": "Fast",
+              "value": 2
+            },
+            {
+              "label": "Very fast and consistent",
+              "value": 3
+            }
+          ]
+        },
+        {
+          "id": "mast_without_porn",
+          "text": "When you masturbate without pornography, how difficult do you find it to become aroused or climax?",
+          "type": "single_select",
+          "options": [
+            {
+              "label": "Not difficult — I rarely or never use porn anyway",
+              "value": 0
+            },
+            {
+              "label": "Sometimes difficult",
+              "value": 1
+            },
+            {
+              "label": "Often difficult",
+              "value": 2
+            },
+            {
+              "label": "Almost always difficult",
+              "value": 3
+            }
+          ],
+          "help_text": "Answer based on your experience when you have tried, or imagine trying. If you've never masturbated without porn, choose 'Almost always difficult'."
+        },
+        {
+          "id": "mast_porn_history",
+          "text": "Did you previously use pornography heavily for an extended period (a year or more), even if you don't currently?",
+          "help_text": "We ask because patterns established during heavy use can persist long after someone stops. This helps tailor your protocol.",
+          "internal_note": "Identifies users with residual porn-conditioned grip/pace patterns who would otherwise mis-route to Variant C or A.",
+          "type": "single_select",
+          "options": [
+            {
+              "label": "No — I never used porn heavily",
+              "value": "never"
+            },
+            {
+              "label": "Yes — but I stopped or significantly reduced over a year ago",
+              "value": "past_stopped"
+            },
+            {
+              "label": "Yes — I stopped or significantly reduced within the last year",
+              "value": "past_recent"
+            },
+            {
+              "label": "Yes — and I still use it currently",
+              "value": "current"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "onset",
+      "title": "Onset",
+      "description": "When the issue started matters. Long-standing patterns and recent ones often respond to different approaches.",
+      "internal_note": "Critical for distinguishing lifelong (more neurobiological) from acquired (more situational/anxiety-driven) PE.",
+      "questions": [
+        {
+          "id": "onset_when",
+          "text": "When did your concerns about ejaculation timing begin?",
+          "type": "single_select",
+          "options": [
+            {
+              "label": "Since my first sexual experiences (lifelong)",
+              "value": "lifelong"
+            },
+            {
+              "label": "After a period of normal control (acquired)",
+              "value": "acquired"
+            },
+            {
+              "label": "I'm not sure / it has varied",
+              "value": "unsure"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "baseline",
+      "title": "Baseline",
+      "description": "A starting point we'll measure against. Don't overthink — your best estimate is fine.",
+      "internal_note": "Captures starting IELT estimate as the primary outcome metric.",
+      "questions": [
+        {
+          "id": "baseline_ielt",
+          "text": "On average, how long do you typically last during partnered intercourse, from penetration to ejaculation?",
+          "type": "single_select",
+          "options": [
+            {
+              "label": "Under 30 seconds",
+              "value": 0.5
+            },
+            {
+              "label": "30 seconds to 1 minute",
+              "value": 1.0
+            },
+            {
+              "label": "1-2 minutes",
+              "value": 1.5
+            },
+            {
+              "label": "2-3 minutes",
+              "value": 2.5
+            },
+            {
+              "label": "3-5 minutes",
+              "value": 4.0
+            },
+            {
+              "label": "5-10 minutes",
+              "value": 7.5
+            },
+            {
+              "label": "Over 10 minutes",
+              "value": 12.0
+            },
+            {
+              "label": "Not currently sexually active with a partner",
+              "value": -1
+            }
+          ]
+        },
+        {
+          "id": "baseline_anxiety",
+          "text": "Would you describe yourself as significantly anxious or worried about your sexual performance?",
+          "type": "single_select",
+          "options": [
+            {
+              "label": "Not at all",
+              "value": 0
+            },
+            {
+              "label": "A little",
+              "value": 1
+            },
+            {
+              "label": "Moderately",
+              "value": 2
+            },
+            {
+              "label": "Very",
+              "value": 3
+            },
+            {
+              "label": "Extremely",
+              "value": 4
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "preferences",
+      "title": "Personalize Your Protocol",
+      "description": "Your variant is set. These optional add-ons let you go deeper in areas you care about — without changing the core protocol.",
+      "internal_note": "Optional add-ons. Each maps to a flag the program engine reads when assembling the daily plan. The core variant protocol is always primary; add-ons appear as supplementary sessions. Note: questions are filtered by variant — only questions with the user's variant in applies_to_variants are shown.",
+      "show_after_routing": true,
+      "questions": [
+        {
+          "id": "addon_pelvic",
+          "text": "Would you like to include supplementary pelvic floor training in your routine?",
+          "type": "single_select",
+          "applies_to_variants": [
+            "A",
+            "D"
+          ],
+          "internal_note": "Variant A and D protocols only include light PFM work. Some users still want it. Adds 2-3 short PFM sessions per week as supplementary, never replacing core variant content.",
+          "options": [
+            {
+              "label": "Yes — add a few short pelvic floor sessions per week",
+              "value": "yes"
+            },
+            {
+              "label": "No — stick to the recommended protocol",
+              "value": "no"
+            }
+          ]
+        },
+        {
+          "id": "addon_breathwork",
+          "text": "Would you like extra breathwork and parasympathetic training sessions?",
+          "type": "single_select",
+          "applies_to_variants": [
+            "B",
+            "C",
+            "D"
+          ],
+          "internal_note": "Variant B already has heavy breath/relaxation focus, so this is mostly relevant for C and D users who want more. For A users, breathwork is already the core, so we don't ask.",
+          "options": [
+            {
+              "label": "Yes — add extra breathwork sessions",
+              "value": "yes"
+            },
+            {
+              "label": "No — stick to the recommended protocol",
+              "value": "no"
+            }
+          ]
+        },
+        {
+          "id": "addon_mindfulness",
+          "text": "Would you like to add daily mindfulness sessions (5-10 min) alongside your protocol?",
+          "type": "single_select",
+          "applies_to_variants": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "internal_note": "Universal add-on. Mindfulness has independent evidence for sexual function (Brotto et al.) and stacks well with all four variants.",
+          "options": [
+            {
+              "label": "Yes — add daily mindfulness",
+              "value": "yes"
+            },
+            {
+              "label": "No — stick to the recommended protocol",
+              "value": "no"
+            }
+          ]
+        },
+        {
+          "id": "session_time",
+          "text": "How much time can you realistically commit per day?",
+          "type": "single_select",
+          "applies_to_variants": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "internal_note": "Determines session pacing. 5-min users get the minimum-viable session; 15-min users get the full session with all extras inline.",
+          "options": [
+            {
+              "label": "5 minutes",
+              "value": 5
+            },
+            {
+              "label": "10 minutes",
+              "value": 10
+            },
+            {
+              "label": "15 minutes",
+              "value": 15
+            },
+            {
+              "label": "20+ minutes",
+              "value": 20
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

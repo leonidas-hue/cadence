@@ -1,0 +1,54 @@
+{
+  "version": "0.1.0",
+  "default_voice_id": "adam",
+  "voices": {
+    "adam": {
+      "elevenlabs_id": "s3TPKV1kjDlVtZbl4Ksh",
+      "display_name": "Adam",
+      "gender": "male",
+      "description": "Calm, measured, grounded. Default voice.",
+      "model": "eleven_multilingual_v2",
+      "settings": {
+        "stability": 0.55,
+        "similarity_boost": 0.75,
+        "style": 0.15,
+        "use_speaker_boost": true
+      }
+    },
+    "bella": {
+      "elevenlabs_id": "4RZ84U1b4WCqpu57LvIq",
+      "display_name": "Bella",
+      "gender": "female",
+      "description": "Warm, soft, steady. Alternative voice.",
+      "model": "eleven_multilingual_v2",
+      "settings": {
+        "stability": 0.55,
+        "similarity_boost": 0.75,
+        "style": 0.15,
+        "use_speaker_boost": true
+      }
+    }
+  },
+  "production_notes": {
+    "stability": "0.55 keeps the voice consistent across the long sessions but allows enough variation that it doesn't sound robotic. Higher (0.7+) makes long sessions feel monotone.",
+    "similarity_boost": "0.75 keeps strong fidelity to the original voice. Drop to 0.5 if voices start to sound thin.",
+    "style": "Low style (0.15) for the calm, non-performative tone we need. Do NOT raise above 0.3 for any sessions.",
+    "every_script_uses_both_voices": "Generate every script in BOTH voices. Storage cost is trivial. Users pick once at onboarding and can switch any time.",
+    "pause_handling": "ElevenLabs respects [PAUSE Xs] markers literally as silence. Verify on first-pass output."
+  },
+  "audio_output_spec": {
+    "format": "mp3",
+    "bitrate_kbps": 128,
+    "sample_rate_hz": 44100,
+    "channels": "mono",
+    "rationale": "Mono at 128kbps is plenty for spoken word, halves storage vs stereo, and downloads twice as fast on cellular."
+  },
+  "file_naming_convention": "{variant}_{week}_{day}_{slug}_{voice}.mp3",
+  "file_naming_examples": [
+    "a_w1_d1_why_this_works_adam.mp3",
+    "a_w1_d2_extended_exhale_bella.mp3",
+    "shared_prep_long_adam.mp3",
+    "shared_breath_calm_bella.mp3",
+    "addon_mindfulness_daily_adam.mp3"
+  ]
+}
