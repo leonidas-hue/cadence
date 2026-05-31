@@ -143,10 +143,28 @@ def _format_plan(result: dict, prefs: dict) -> str:
     lines.append(_hr("═"))
     lines.append("")
     lines.append(f"  Track: Variant {result['variant']} — {result['name']}")
-    lines.append(f"  Daily commitment: {prefs.get('session_time', 10)} minutes")
     lines.append("")
 
-    lines.append("  CORE PROTOCOL (recommended, daily):")
+    # Advancement speed
+    speed = prefs.get("advancement_speed", "standard")
+    if speed == "extended":
+        speed_label = "Extended (every other day, ~16 weeks)"
+    else:
+        speed_label = "Standard (one core session per day, 8 weeks)"
+    lines.append(f"  Pacing: {speed_label}")
+
+    # Daily time commitment
+    time_tier = prefs.get("daily_time_commitment", "standard")
+    time_labels = {
+        "quick": "Quick (5-10 min)",
+        "standard": "Standard (15-25 min)",
+        "extended": "Extended (30-45 min)",
+        "deep": "Deep (45-60 min)",
+    }
+    lines.append(f"  Daily time: {time_labels.get(time_tier, time_tier)}")
+    lines.append("")
+
+    lines.append("  CORE PROTOCOL (daily, regardless of time tier):")
     for component in _core_components_for_variant(result["variant"]):
         lines.append(f"    • {component}")
     lines.append("")
@@ -159,16 +177,35 @@ def _format_plan(result: dict, prefs: dict) -> str:
     if prefs.get("addon_mindfulness") == "yes":
         addons.append("Daily mindfulness (5-10 min)")
     if addons:
-        lines.append("  ADD-ONS YOU CHOSE:")
+        lines.append("  EXPLICIT ADD-ONS:")
         for a in addons:
             lines.append(f"    + {a}")
         lines.append("")
-    else:
-        lines.append("  No optional add-ons. You can change this anytime in settings.")
+
+    # Time-tier-driven daily composition
+    if time_tier in ("extended", "deep"):
+        lines.append(f"  AT YOUR '{time_tier.upper()}' TIME TIER, your day also includes:")
+        if time_tier == "extended":
+            lines.append("    + Body scan from practice library (~10 min)")
+            lines.append("    + One breath pattern of your choice (~5 min)")
+        if time_tier == "deep":
+            lines.append("    + Body scan from practice library (~10 min)")
+            lines.append("    + One breath pattern of your choice (~5 min)")
+            lines.append("    + Daily reflection / journaling prompts (~10 min)")
+            lines.append("    + Pre-session prep audio when relevant (~10 min)")
+        lines.append("")
+        lines.append("  These compound with — they don't replace — the core protocol.")
+        lines.append("  Caps still apply: pelvic floor work won't exceed 15 min/day;")
+        lines.append("  stop-start/edging stays at 2-3 sessions/week as recommended.")
+        lines.append("")
+
+    if time_tier == "quick" and not addons:
+        lines.append("  Quick tier with no add-ons: today's core session only.")
+        lines.append("  Plenty of practice library content available if you ever want more.")
         lines.append("")
 
     if "recommend_pt" in result["flags"]:
-        lines.append("  ⚠ STRONG RECOMMENDATION:")
+        lines.append("  ⚠  STRONG RECOMMENDATION:")
         lines.append("    Pelvic floor physiotherapy alongside this program.")
         lines.append("    Cadence supplements in-person care for your profile.")
         lines.append("")

@@ -27,21 +27,53 @@ Soften your shoulders. Let your jaw hang.
 
 [PAUSE 3s]
 
-I'll guide the first six breaths. Then it's yours.
+I'll count the first two breaths to set the pace, then guide a few more.
 
 [PAUSE 2s]
 
 [soft]
 In.
-[BREATH IN — 4s]
+[PAUSE 1s]
+Two.
+[PAUSE 1s]
+Three.
+[PAUSE 1s]
+Four.
+[PAUSE 1s]
 Out.
-[BREATH OUT — 6s]
+[PAUSE 1s]
+Two.
+[PAUSE 1s]
+Three.
+[PAUSE 1s]
+Four.
+[PAUSE 1s]
+Five.
+[PAUSE 1s]
+Six.
 
 [soft]
-In.
-[BREATH IN — 4s]
+Again. In.
+[PAUSE 1s]
+Two.
+[PAUSE 1s]
+Three.
+[PAUSE 1s]
+Four.
+[PAUSE 1s]
 Out.
-[BREATH OUT — 6s]
+[PAUSE 1s]
+Two.
+[PAUSE 1s]
+Three.
+[PAUSE 1s]
+Four.
+[PAUSE 1s]
+Five.
+[PAUSE 1s]
+Six.
+
+[PAUSE 2s]
 
 [soft]
 In.
@@ -105,29 +137,81 @@ Sit upright. Eyes can be open or closed.
 
 [PAUSE 3s]
 
-I'll guide eight cycles. Then it's yours.
+I'll count the first two cycles, then name the phases for six more.
 
 [PAUSE 2s]
 
 [firmer]
 In.
-[BREATH IN — 4s]
+[PAUSE 1s]
+Two.
+[PAUSE 1s]
+Three.
+[PAUSE 1s]
+Four.
+[PAUSE 1s]
 Hold.
-[HOLD — 4s]
+[PAUSE 1s]
+Two.
+[PAUSE 1s]
+Three.
+[PAUSE 1s]
+Four.
+[PAUSE 1s]
 Out.
-[BREATH OUT — 4s]
+[PAUSE 1s]
+Two.
+[PAUSE 1s]
+Three.
+[PAUSE 1s]
+Four.
+[PAUSE 1s]
 Hold.
-[HOLD — 4s]
+[PAUSE 1s]
+Two.
+[PAUSE 1s]
+Three.
+[PAUSE 1s]
+Four.
 
-In.
-[BREATH IN — 4s]
+[PAUSE 1s]
+
+[firmer]
+Again. In.
+[PAUSE 1s]
+Two.
+[PAUSE 1s]
+Three.
+[PAUSE 1s]
+Four.
+[PAUSE 1s]
 Hold.
-[HOLD — 4s]
+[PAUSE 1s]
+Two.
+[PAUSE 1s]
+Three.
+[PAUSE 1s]
+Four.
+[PAUSE 1s]
 Out.
-[BREATH OUT — 4s]
+[PAUSE 1s]
+Two.
+[PAUSE 1s]
+Three.
+[PAUSE 1s]
+Four.
+[PAUSE 1s]
 Hold.
-[HOLD — 4s]
+[PAUSE 1s]
+Two.
+[PAUSE 1s]
+Three.
+[PAUSE 1s]
+Four.
 
+[PAUSE 2s]
+
+[firmer]
 In.
 [BREATH IN — 4s]
 Hold.
@@ -209,100 +293,145 @@ Done.
 
 [soft]
 
-Five minutes. Four-seven-eight breathing.
+Four breaths. Four-seven-eight breathing.
 
 [PAUSE 2s]
 
-Inhale four. Hold seven. Exhale eight.
+Inhale four. Hold seven. Exhale eight — through the mouth, soft whoosh.
 
 [PAUSE 2s]
 
-If the hold or the exhale feels too long the first time, shorten it. The ratios matter more than the seconds. We can always lengthen later.
+If the hold feels long, shorten it. The ratio matters more than the exact seconds.
 
 [PAUSE 3s]
 
-Tongue lightly behind your top teeth, where the gum meets the tooth. Mouth slightly open. Exhale through the mouth, not the nose.
+Tongue lightly behind your top front teeth. Mouth slightly open. Exhale around it.
 
 [PAUSE 3s]
 
-Breath out completely first. Empty your lungs.
+Empty your lungs completely first.
 
 [BREATH OUT — 5s]
 
 [PAUSE 2s]
 
-Now begin.
+Follow my count.
 
 [PAUSE 1s]
 
 [soft]
-In, through the nose, four.
+In through the nose.
+[PAUSE 1s]
+Two.
+[PAUSE 1s]
+Three.
+[PAUSE 1s]
+Four.
+[PAUSE 1s]
+Hold.
+[PAUSE 1s]
+Two.
+[PAUSE 1s]
+Three.
+[PAUSE 1s]
+Four.
+[PAUSE 1s]
+Five.
+[PAUSE 1s]
+Six.
+[PAUSE 1s]
+Seven.
+[PAUSE 1s]
+Out, whoosh.
+[PAUSE 1s]
+Two.
+[PAUSE 1s]
+Three.
+[PAUSE 1s]
+Four.
+[PAUSE 1s]
+Five.
+[PAUSE 1s]
+Six.
+[PAUSE 1s]
+Seven.
+[PAUSE 1s]
+Eight.
+
+[PAUSE 2s]
+
+[soft]
+Again. In.
+[PAUSE 1s]
+Two.
+[PAUSE 1s]
+Three.
+[PAUSE 1s]
+Four.
+[PAUSE 1s]
+Hold.
+[PAUSE 1s]
+Two.
+[PAUSE 1s]
+Three.
+[PAUSE 1s]
+Four.
+[PAUSE 1s]
+Five.
+[PAUSE 1s]
+Six.
+[PAUSE 1s]
+Seven.
+[PAUSE 1s]
+Out, whoosh.
+[PAUSE 1s]
+Two.
+[PAUSE 1s]
+Three.
+[PAUSE 1s]
+Four.
+[PAUSE 1s]
+Five.
+[PAUSE 1s]
+Six.
+[PAUSE 1s]
+Seven.
+[PAUSE 1s]
+Eight.
+
+[PAUSE 2s]
+
+[soft]
+Two more — I'll name the phases, you keep the count.
+
+[soft]
+Inhale.
 [BREATH IN — 4s]
-Hold, seven.
+Hold.
 [HOLD — 7s]
-Out, through the mouth, eight.
+Exhale, whoosh.
 [BREATH OUT — 8s]
 
 [PAUSE 2s]
 
 [soft]
-In.
+Last one. Inhale.
 [BREATH IN — 4s]
 Hold.
 [HOLD — 7s]
-Out.
+Exhale, all the way out.
 [BREATH OUT — 8s]
+
+[PAUSE 3s]
+
+[soft]
+Let your breathing return to normal. Notice how your body feels now versus a minute ago.
+
+[PAUSE 3s]
+
+That's the whole practice — four breaths. Use it before anything that spikes your nerves.
 
 [PAUSE 2s]
-
-[soft]
-In.
-[BREATH IN — 4s]
-Hold.
-[HOLD — 7s]
-Out.
-[BREATH OUT — 8s]
-
-[PAUSE 2s]
-
-[soft]
-In.
-[BREATH IN — 4s]
-Hold.
-[HOLD — 7s]
-Out.
-[BREATH OUT — 8s]
-
-[PAUSE 2s]
-
-[soft]
-Continue on your own. Same pattern.
-
-(Silent for ~3 minutes.)
-
-[PAUSE 180s]
-
-[soft]
-
-Two more, with me.
-
-[soft]
-In.
-[BREATH IN — 4s]
-Hold.
-[HOLD — 7s]
-Out.
-[BREATH OUT — 8s]
-
-[soft]
-In.
-[BREATH IN — 4s]
-Hold.
-[HOLD — 7s]
-Out, fully.
-[BREATH OUT — 8s]
-
-[PAUSE 5s]
 
 Done.
 

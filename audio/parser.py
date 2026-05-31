@@ -149,6 +149,7 @@ TONE_MARKER = re.compile(r"\[(soft|firmer|whispered|warm)\]\s*", re.IGNORECASE)
 
 # Inline directives we keep but don't speak:
 PAUSE_MARKER = re.compile(r"\[PAUSE\s+(\d+)s\]", re.IGNORECASE)
+HOLD_MARKER = re.compile(r"\[HOLD\s*[—\-]\s*(\d+)s\]", re.IGNORECASE)
 BREATH_IN_MARKER = re.compile(r"\[BREATH IN\s*[—\-]\s*(\d+)s\]", re.IGNORECASE)
 BREATH_OUT_MARKER = re.compile(r"\[BREATH OUT\s*[—\-]\s*(\d+)s\]", re.IGNORECASE)
 INHALE_MARKER = re.compile(r"\[INHALE\]", re.IGNORECASE)

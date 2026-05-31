@@ -25,6 +25,7 @@ from dataclasses import dataclass
 
 from .parser import (
     PAUSE_MARKER,
+    HOLD_MARKER,
     BREATH_IN_MARKER,
     BREATH_OUT_MARKER,
     INHALE_MARKER,
@@ -48,10 +49,10 @@ class RenderedScript:
 # Maximum break duration ElevenLabs honors per tag
 MAX_BREAK_SECONDS = 3
 
-# Pauses at or above this threshold are flagged as long silences for the app
-# to handle separately (rather than chaining 10+ break tags, which produces
-# audio artifacts).
-LONG_PAUSE_THRESHOLD = 10
+# Pauses at or above this threshold are spliced as real silence instead of
+# being emitted as a capped 3 s break tag. Lowered to 4 so that [PAUSE 4s]
+# and above render at full length rather than collapsing to 3 s.
+LONG_PAUSE_THRESHOLD = 4
 
 
 def _build_break_chain(seconds: int) -> str:
@@ -93,9 +94,20 @@ def render_for_tts(body_md: str) -> RenderedScript:
             # ideally split the audio at this point and insert real silence.
             # For pilot generation we still want SOME pause baked in.
             return _build_break_chain(MAX_BREAK_SECONDS)
-        return _build_break_chain(seconds)
+        # Cap at MAX_BREAK_SECONDS so we never chain break tags. Chaining
+        # causes ElevenLabs v2 to compress/speed up audio — single tags are
+        # safe at any density. Body scans with [PAUSE 4s-6s] should sound like
+        # 3s pauses, not garbled speech.
+        return _build_break_chain(min(seconds, MAX_BREAK_SECONDS))
 
     text = PAUSE_MARKER.sub(replace_pause, text)
+
+    # 3b. Replace HOLD markers the same way — capped at MAX_BREAK_SECONDS so they
+    # render as single break tags between cue words in box-breathing segments.
+    text = HOLD_MARKER.sub(
+        lambda m: _build_break_chain(min(int(m.group(1)), MAX_BREAK_SECONDS)),
+        text,
+    )
 
     # 4. Replace BREATH IN/OUT markers with break tags of the same duration
     def replace_breath(m: re.Match[str]) -> str:

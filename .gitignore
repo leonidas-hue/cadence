@@ -7,6 +7,10 @@
 audio_output/
 audio/pilot_output/
 
+# Onboarding harness — generated artifacts
+state/
+onboarding.html
+
 # Python
 __pycache__/
 *.py[cod]

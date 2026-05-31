@@ -51,19 +51,22 @@ DELAY_BETWEEN_CALLS = 0.5  # seconds
 
 
 def load_voices() -> dict:
-    """Returns the parsed voices.json: {voices: {adam: {elevenlabs_id, settings}, bella: {...}}}"""
+    """Load voices.json and normalize each entry to include `voice_id`.
+
+    voices.json uses `elevenlabs_id` as the canonical field name; generate_one()
+    expects `voice_id`. We alias at load time so neither the JSON schema nor the
+    generator need to agree on the field name going forward."""
     with open(DEFAULT_VOICES_JSON) as f:
         data = json.load(f)
-    missing = [
-        name
-        for name, cfg in data.get("voices", {}).items()
-        if not cfg.get("elevenlabs_id")
-    ]
-    if missing:
-        raise ValueError(
-            f"voices.json: missing 'elevenlabs_id' for voice(s): {', '.join(missing)}. "
-            "Each voice entry must have an 'elevenlabs_id' field."
-        )
+    for name, cfg in data.get("voices", {}).items():
+        if "voice_id" not in cfg:
+            if "elevenlabs_id" in cfg:
+                cfg["voice_id"] = cfg["elevenlabs_id"]
+            else:
+                raise ValueError(
+                    f"voices.json: voice '{name}' has neither 'voice_id' nor "
+                    f"'elevenlabs_id'. Add one of these fields to voices.json."
+                )
     return data
 
 
@@ -79,12 +82,41 @@ def generate_one(
     max_retries: int = 3,
 ) -> tuple[bool, Optional[str]]:
     """Generate a single audio file. Returns (success, error_message)."""
+    # Treat an existing file as "done" only if it's a real audio file.
+    # Network blips or aborted writes can leave zero-byte / tiny stub files;
+    # those would otherwise be silently skipped forever. Real MP3s for our
+    # session lengths are 200KB+; well under 10KB is definitively broken.
+    MIN_VALID_BYTES = 10_000
     if output_path.exists():
-        return True, None  # already done
+        if output_path.stat().st_size >= MIN_VALID_BYTES:
+            return True, None  # already done, file looks healthy
+        # Existing file is suspiciously small — delete and re-generate.
+        try:
+            output_path.unlink()
+            print(f"   ⚠ existing file too small "
+                  f"({output_path.stat().st_size if output_path.exists() else 0} bytes), regenerating")
+        except OSError:
+            pass
+
+    # Sessions with guided breathing are routed through the silence-splicing
+    # pipeline — TTS + real silence concatenated via ffmpeg — because ElevenLabs
+    # v2 compresses audio when break tags outnumber spoken words locally.
+    from .splice import needs_splicing, generate_spliced
+    if needs_splicing(job.body_md):
+        return generate_spliced(
+            client=client,
+            job=job,
+            voice_name=voice_name,
+            voice_config=voice_config,
+            output_path=output_path,
+            model_id=model_id,
+            output_format=output_format,
+            max_retries=max_retries,
+        )
 
     rendered = render_for_tts(job.body_md)
 
-    voice_id = voice_config["elevenlabs_id"]
+    voice_id = voice_config["voice_id"]
     settings = voice_config.get("settings", {})
 
     last_error: Optional[str] = None
@@ -110,6 +142,18 @@ def generate_one(
                         f.write(chunk)
                 else:
                     f.write(audio)
+            # Verify the write produced a non-trivial file before claiming success.
+            if output_path.stat().st_size < MIN_VALID_BYTES:
+                last_error = (
+                    f"wrote {output_path.stat().st_size} bytes "
+                    f"(expected ≥{MIN_VALID_BYTES}); likely truncated stream"
+                )
+                output_path.unlink(missing_ok=True)
+                if attempt < max_retries - 1:
+                    wait = 2 ** attempt
+                    print(f"   ↻ retry in {wait}s ({last_error})")
+                    time.sleep(wait)
+                continue
             return True, None
         except Exception as e:  # noqa: BLE001 - intentionally broad
             last_error = f"{type(e).__name__}: {e}"
@@ -178,7 +222,7 @@ def generate_jobs(
             output_path = output_dir / job.audio_filename(voice_name)
             tag = f"[{i}/{len(jobs_list)}] {job.audio_filename(voice_name)}"
 
-            if output_path.exists():
+            if output_path.exists() and output_path.stat().st_size >= 10_000:
                 print(f"  ✓ {tag}  (already generated)")
                 summary["skipped"] += 1
                 continue

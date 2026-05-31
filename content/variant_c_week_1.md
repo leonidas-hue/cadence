@@ -649,9 +649,64 @@ Get comfortable. Three normal breaths first.
 
 [PAUSE 5s]
 
-Now begin.
+Follow my count.
 
 [PAUSE 1s]
+
+[soft]
+In.
+[PAUSE 1s]
+Two.
+[PAUSE 1s]
+Three.
+[PAUSE 1s]
+Four.
+[PAUSE 1s]
+Out.
+[PAUSE 1s]
+Two.
+[PAUSE 1s]
+Three.
+[PAUSE 1s]
+Four.
+[PAUSE 1s]
+Five.
+[PAUSE 1s]
+Six.
+[PAUSE 1s]
+Seven.
+[PAUSE 1s]
+Eight.
+
+[soft]
+Again. In.
+[PAUSE 1s]
+Two.
+[PAUSE 1s]
+Three.
+[PAUSE 1s]
+Four.
+[PAUSE 1s]
+Out.
+[PAUSE 1s]
+Two.
+[PAUSE 1s]
+Three.
+[PAUSE 1s]
+Four.
+[PAUSE 1s]
+Five.
+[PAUSE 1s]
+Six.
+[PAUSE 1s]
+Seven.
+[PAUSE 1s]
+Eight.
+
+[PAUSE 2s]
+
+[soft]
+Now I'll just name the phases.
 
 [soft]
 In, four.
@@ -665,33 +720,15 @@ In.
 Out, slow.
 [BREATH OUT — 8s]
 
-[soft]
-In.
-[BREATH IN — 4s]
-Out, soft.
-[BREATH OUT — 8s]
-
-[soft]
-In.
-[BREATH IN — 4s]
-Out.
-[BREATH OUT — 8s]
-
-[soft]
-In.
-[BREATH IN — 4s]
-Out.
-[BREATH OUT — 8s]
-
 [PAUSE 3s]
 
-Continue this pattern on your own for two minutes. If eight seconds out is too long the first few times, six is fine. The point is the ratio — exhale longer than inhale.
+Continue this pattern on your own. If eight seconds out is too long, six is fine. The point is the ratio — exhale longer than inhale.
 
 [PAUSE 2s]
 
 Begin.
 
-[PAUSE 120s]
+[PAUSE 60s]
 
 [soft]
 Stop. Notice.

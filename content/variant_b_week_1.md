@@ -195,26 +195,69 @@ A trick: imagine your belly is a balloon. The inhale fills the balloon. The exha
 
 [PAUSE 2s]
 
-Let's do five together.
+Let's find it together.
 
 [PAUSE 1s]
 
-[soft]
-In, fill the belly.
-[BREATH IN — 5s]
-Out, empty.
-[BREATH OUT — 6s]
-
-[soft]
+[firmer]
 In, belly rises.
-[BREATH IN — 5s]
-Out, falls.
-[BREATH OUT — 6s]
+[PAUSE 1s]
+Two.
+[PAUSE 1s]
+Three.
+[PAUSE 1s]
+Four.
+[PAUSE 1s]
+Five.
+[PAUSE 1s]
+Six.
+[PAUSE 1s]
+And let it fall.
+[PAUSE 1s]
+Two.
+[PAUSE 1s]
+Three.
+[PAUSE 1s]
+Four.
+[PAUSE 1s]
+Five.
+[PAUSE 1s]
+Six.
+
+[firmer]
+Again. In.
+[PAUSE 1s]
+Two.
+[PAUSE 1s]
+Three.
+[PAUSE 1s]
+Four.
+[PAUSE 1s]
+Five.
+[PAUSE 1s]
+Six.
+[PAUSE 1s]
+And out.
+[PAUSE 1s]
+Two.
+[PAUSE 1s]
+Three.
+[PAUSE 1s]
+Four.
+[PAUSE 1s]
+Five.
+[PAUSE 1s]
+Six.
+
+[PAUSE 2s]
 
 [soft]
-In, soft.
+Good. Now I'll just name the phases.
+
+[soft]
+In, low and slow.
 [BREATH IN — 5s]
-Out, slow.
+Out, soft.
 [BREATH OUT — 6s]
 
 [soft]
@@ -223,21 +266,15 @@ In.
 Out.
 [BREATH OUT — 6s]
 
-[soft]
-In.
-[BREATH IN — 5s]
-Out.
-[BREATH OUT — 6s]
+[PAUSE 2s]
 
-[PAUSE 3s]
-
-Continue this on your own for two minutes. Hand on the belly, hand on the chest. Belly rises, belly falls. If your shoulders sneak up, just notice and reset.
+Continue on your own. Belly rises, belly falls. I'll be quiet for a minute.
 
 [PAUSE 2s]
 
 Begin.
 
-[PAUSE 120s]
+[PAUSE 60s]
 
 [soft]
 Come back when you're ready.

@@ -40,11 +40,27 @@ Your profile points to something specific. Acquired premature ejaculation, drive
 
 [PAUSE 1s]
 
-Somewhere along the way — maybe a stressful season, a new partner, a single bad experience — your nervous system started treating sex as a high-pressure event. And once your body learns to associate intimacy with pressure, it speeds up. That's not weakness. That's biology doing exactly what it's designed to do under threat.
+Somewhere along the way — maybe a stressful season, a new partner, a single bad experience — your nervous system started treating sex as a high-pressure event.
+
+[PAUSE 1s]
+
+And once your body learns to associate intimacy with pressure, it speeds up.
+
+[PAUSE 1s]
+
+That's not weakness. That's biology doing exactly what it's designed to do under threat.
 
 [PAUSE 2s]
 
-The body has two states that matter here. The first is sympathetic — that's your fight-or-flight system. Heart rate up, breathing fast and shallow, muscles tense, attention narrow. This is the state that triggers ejaculation quickly. It's evolutionarily efficient. It's also the opposite of what you want during sex.
+The body has two states that matter here.
+
+[PAUSE 1s]
+
+The first is sympathetic — that's your fight-or-flight system. Heart rate up, breathing fast and shallow, muscles tense, attention narrow.
+
+[PAUSE 1s]
+
+This is the state that triggers ejaculation quickly. It's evolutionarily efficient — and it's also the opposite of what you want during sex.
 
 [PAUSE 1s]
 
@@ -69,7 +85,19 @@ A few things to know.
 
 [PAUSE 1s]
 
-This is generally a more responsive profile than lifelong PE — there's a clear cause, and the protocol targets it directly. Most users start to notice changes by week four to six, though everyone's timeline is different. That doesn't mean every day will feel like progress. Some days the work will feel boring. Some days you'll skip. Both are fine.
+This is generally a more responsive profile than lifelong PE — there's a clear cause, and the protocol targets it directly.
+
+[PAUSE 1s]
+
+Most users start to notice changes by week four to six, though everyone's timeline is different.
+
+[PAUSE 1s]
+
+That doesn't mean every day will feel like progress. Some days the work will feel boring. Some days you'll skip.
+
+[PAUSE 1s]
+
+Both are fine.
 
 [PAUSE 2s]
 
@@ -101,95 +129,142 @@ Today we learn the most important skill in the program. Extended exhale breathin
 
 [PAUSE 2s]
 
-The principle is simple. Your inhale is sympathetic — it speeds the heart up. Your exhale is parasympathetic — it slows the heart down. By making the exhale longer than the inhale, you tilt your nervous system toward calm. Deliberately. On demand.
+The principle is simple.
+
+[PAUSE 1s]
+
+Your inhale is sympathetic — it speeds the heart up. Your exhale is parasympathetic — it slows the heart down.
+
+[PAUSE 1s]
+
+By making the exhale longer than the inhale, you tilt your nervous system toward calm.
+
+[PAUSE 1s]
+
+Deliberately. On demand.
 
 [PAUSE 2s]
 
-We're going to use a four-six pattern. Four seconds in, six seconds out. No holds. No counting in your head once we start — I'll guide you.
+We're going to use a four-six pattern.
+
+[PAUSE 1s]
+
+Four seconds in, six seconds out. No holds. No counting in your head once we start — I'll guide you.
 
 [PAUSE 2s]
 
-Get comfortable. Sitting or lying down, both work. Soften your shoulders. Let your jaw unclench. If your eyes want to close, let them.
+Get comfortable. Sitting or lying down, both work.
+
+[PAUSE 1s]
+
+Soften your shoulders. Let your jaw unclench. If your eyes want to close, let them.
 
 [PAUSE 3s]
 
-Place one hand on your belly, just below the navel. We want the breath to move your belly, not your chest. If you feel your shoulders rising on the inhale, you're breathing too high. Drop the breath into the belly.
+Place one hand on your belly, just below the navel — we want the breath to move your belly, not your chest.
+
+[PAUSE 1s]
+
+If you feel your shoulders rising on the inhale, you're breathing too high. Drop the breath into the belly.
 
 [PAUSE 3s]
 
 Take one easy breath to start.
 
-[INHALE — 3s]
-[EXHALE — 4s]
+[BREATH IN — 3s]
+[BREATH OUT — 4s]
 
 [PAUSE 2s]
 
-Good. Now let's begin.
+Good. Follow my count.
 
 [PAUSE 2s]
 
 [firmer]
-Inhale, four seconds.
+Breathe in.
+[PAUSE 1s]
+Two.
+[PAUSE 1s]
+Three.
+[PAUSE 1s]
+Four.
+[PAUSE 1s]
+And out.
+[PAUSE 1s]
+Two.
+[PAUSE 1s]
+Three.
+[PAUSE 1s]
+Four.
+[PAUSE 1s]
+Five.
+[PAUSE 1s]
+Six.
 
-[BREATH IN — 4s]
+[firmer]
+Again. In.
+[PAUSE 1s]
+Two.
+[PAUSE 1s]
+Three.
+[PAUSE 1s]
+Four.
+[PAUSE 1s]
+Out.
+[PAUSE 1s]
+Two.
+[PAUSE 1s]
+Three.
+[PAUSE 1s]
+Four.
+[PAUSE 1s]
+Five.
+[PAUSE 1s]
+Six.
+
+[PAUSE 2s]
 
 [soft]
-Exhale, six seconds.
-
-[BREATH OUT — 6s]
-
-[PAUSE 1s]
+Good. Now I'll just name the phases — you keep the pace.
 
 [firmer]
 Inhale.
-
 [BREATH IN — 4s]
-
 [soft]
 Exhale.
-
 [BREATH OUT — 6s]
-
-[PAUSE 1s]
 
 [firmer]
 Inhale.
-
 [BREATH IN — 4s]
-
-[soft]
-Exhale, slow.
-
-[BREATH OUT — 6s]
-
-[PAUSE 1s]
-
-[firmer]
-Inhale.
-
-[BREATH IN — 4s]
-
 [soft]
 And out, soft.
-
 [BREATH OUT — 6s]
 
-[PAUSE 1s]
+[PAUSE 2s]
 
-Continue this pattern on your own for ten more breaths. I'll be quiet. If you lose count, just come back to four in, six out.
+Continue on your own. Four in, six out. I'll be quiet for a minute.
 
 [PAUSE 2s]
 
 Begin.
 
-[PAUSE 90s]
+[PAUSE 60s]
 
 [soft]
 Come back when you're ready.
 
 [PAUSE 3s]
 
-Notice how you feel. Heart rate often drops three to five beats per minute after a session like this. The shoulders soften. The mind quiets a little. This is parasympathetic state — and you just accessed it on demand.
+Notice how you feel.
+
+[PAUSE 2s]
+
+Heart rate often drops three to five beats per minute after a session like this. The shoulders soften… the mind quiets a little.
+
+[PAUSE 1s]
+
+This is parasympathetic state — and you just accessed it on demand.
 
 [PAUSE 2s]
 
@@ -214,7 +289,11 @@ Today we add something new. Body awareness.
 
 [PAUSE 2s]
 
-Performance anxiety doesn't just live in your head. It shows up in your body, before you even notice it. Tight jaw. Hunched shoulders. Clenched glutes. A tense pelvic floor that grips without permission.
+Performance anxiety doesn't just live in your head.
+
+[PAUSE 1s]
+
+It shows up in your body, before you even notice it. Tight jaw. Hunched shoulders. Clenched glutes. A tense pelvic floor that grips without permission.
 
 [PAUSE 2s]
 
@@ -281,7 +360,15 @@ Now the glutes. Right now, are you clenching them? Many men do this constantly, 
 
 [PAUSE 4s]
 
-And now the pelvic floor itself. The muscles between the front and back, around the perineum. Notice if there's any low-level grip happening there. If there is, let it release. The pelvic floor should be soft at rest. Soft, heavy, unguarded.
+And now the pelvic floor itself. The muscles between the front and back, around the perineum.
+
+[PAUSE 1s]
+
+Notice if there's any low-level grip happening there — if there is, let it release.
+
+[PAUSE 1s]
+
+The pelvic floor should be soft at rest. Soft, heavy, unguarded.
 
 [PAUSE 6s]
 
@@ -313,7 +400,15 @@ This is what unguarded feels like. Most of us walk around in low-level tension a
 
 [PAUSE 2s]
 
-Throughout the day today, check in with yourself. Are your shoulders up? Is your jaw tight? Is your floor clenched? If yes — soften. That's the practice.
+Throughout the day today, check in with yourself.
+
+[PAUSE 1s]
+
+Are your shoulders up? Is your jaw tight? Is your floor clenched?
+
+[PAUSE 1s]
+
+If yes — soften. That's the practice.
 
 [PAUSE 2s]
 
@@ -342,7 +437,23 @@ Therapists call it spectatoring.
 
 [PAUSE 2s]
 
-It looks like this. You're with a partner. Things are going well. Then a part of your brain — usually somewhere behind your eyes — pulls back and starts watching. Watching the encounter from the outside. Asking questions. Are they enjoying this? Am I close? How long has it been? Is this position the right one? Should I slow down? Are they getting bored?
+It looks like this.
+
+[PAUSE 1s]
+
+You're with a partner. Things are going well.
+
+[PAUSE 1s]
+
+Then a part of your brain — usually somewhere behind your eyes — pulls back and starts watching.
+
+[PAUSE 1s]
+
+Watching the encounter from the outside. Asking questions.
+
+[PAUSE 1s]
+
+Are they enjoying this? Am I close? How long has it been? Is this position the right one? Should I slow down? Are they getting bored?
 
 [PAUSE 2s]
 
@@ -355,7 +466,19 @@ First, you leave your body. You stop feeling the actual sensations of sex. The p
 
 [PAUSE 2s]
 
-Second, your nervous system reads this self-monitoring as a threat. The voice asking "am I doing okay?" is functionally identical to the voice that asked "am I doing okay?" before you gave a public speech, or before a job interview, or before any high-pressure performance. Your body responds with sympathetic arousal. Heart rate up. Muscles tight. And the ejaculation reflex moves closer.
+Second, your nervous system reads this self-monitoring as a threat.
+
+[PAUSE 1s]
+
+The voice asking "am I doing okay?" is functionally identical to the voice that asked "am I doing okay?" before you gave a public speech, or before a job interview, or before any high-pressure performance.
+
+[PAUSE 1s]
+
+Your body responds with sympathetic arousal. Heart rate up. Muscles tight.
+
+[PAUSE 1s]
+
+And the ejaculation reflex moves closer.
 
 [PAUSE 2s]
 
@@ -367,7 +490,15 @@ So what do you do instead?
 
 [PAUSE 1s]
 
-You bring attention back into the body. Specifically, into sensation. Not into what your partner might be thinking. Not into a mental clock. Into the actual physical experience — what their skin feels like, what your own breath feels like, what your hands are touching.
+You bring attention back into the body.
+
+[PAUSE 1s]
+
+Specifically, into sensation. Not into what your partner might be thinking. Not into a mental clock.
+
+[PAUSE 1s]
+
+Into the actual physical experience — what their skin feels like, what your own breath feels like, what your hands are touching.
 
 [PAUSE 2s]
 
@@ -375,11 +506,19 @@ This is a skill. It's a muscle you have to build. And we're going to build it sl
 
 [PAUSE 2s]
 
-For today, just one reflection. Take a moment now and ask yourself: what does spectatoring look like for you? When you've had partnered sex recently, what was the voice in your head saying? What was it asking?
+For today, just one reflection.
+
+[PAUSE 1s]
+
+Take a moment now and ask yourself: what does spectatoring look like for you?
+
+[PAUSE 1s]
+
+When you've had partnered sex recently, what was the voice in your head saying? What was it asking?
 
 [PAUSE 5s]
 
-Just notice. No judgment. The awareness itself is the first step.
+Just notice… no judgment. The awareness itself is the first step.
 
 [PAUSE 3s]
 
@@ -404,110 +543,149 @@ Today we add a second breath tool to your kit.
 
 [PAUSE 2s]
 
-Extended exhale, which we've been practicing, is for general parasympathetic activation. Calm baseline. We use it before bed. We use it before sex. We use it when we want to feel slower.
+Extended exhale — what we've been practicing — is for a calm baseline. We use it before bed, before sex, whenever we want to feel slower.
 
 [PAUSE 2s]
 
-Box breathing is different. Box breathing is for *under pressure*. It's used by special operations soldiers, by surgeons, by tennis players between points. It works when you're in the middle of something stressful and need to reset fast.
+Box breathing is different. It's for *under pressure*. Special operations soldiers use it, surgeons use it, athletes use it between points. It resets you fast when you're in the middle of something stressful.
 
 [PAUSE 2s]
 
-The pattern is four seconds in. Four-second hold. Four seconds out. Four-second hold. A square. Hence the name.
+The shape is a square: four seconds in, four-second hold, four seconds out, four-second hold. I'll count the first rounds with you, then you'll take it on your own.
 
 [PAUSE 2s]
 
-Get comfortable. Hand on belly. Three easy breaths first.
-
-[PAUSE 3s]
+Get comfortable. Hand on your belly. Let's settle with three slow breaths first.
 
 [soft]
-Inhale.
-[BREATH IN — 3s]
-Exhale.
-[BREATH OUT — 4s]
+In.
+[BREATH IN — 4s]
+And out, slow.
+[BREATH OUT — 6s]
 
 [soft]
-Inhale.
-[BREATH IN — 3s]
-Exhale.
-[BREATH OUT — 4s]
+In.
+[BREATH IN — 4s]
+Out.
+[BREATH OUT — 6s]
 
 [soft]
-Inhale.
-[BREATH IN — 3s]
-Exhale.
-[BREATH OUT — 4s]
+In.
+[BREATH IN — 4s]
+Out.
+[BREATH OUT — 6s]
 
 [PAUSE 2s]
 
-Now box breathing. Follow my counts.
+Now the box. Follow my count.
+
+[firmer]
+Breathe in.
+[PAUSE 1s]
+Two.
+[PAUSE 1s]
+Three.
+[PAUSE 1s]
+Four.
+[PAUSE 1s]
+Hold.
+[PAUSE 1s]
+Two.
+[PAUSE 1s]
+Three.
+[PAUSE 1s]
+Four.
+[PAUSE 1s]
+And out.
+[PAUSE 1s]
+Two.
+[PAUSE 1s]
+Three.
+[PAUSE 1s]
+Four.
+[PAUSE 1s]
+Hold.
+[PAUSE 1s]
+Two.
+[PAUSE 1s]
+Three.
+[PAUSE 1s]
+Four.
 
 [PAUSE 1s]
 
 [firmer]
-Inhale.
-[BREATH IN — 4s]
+Again. Breathe in.
+[PAUSE 1s]
+Two.
+[PAUSE 1s]
+Three.
+[PAUSE 1s]
+Four.
+[PAUSE 1s]
 Hold.
-[HOLD — 4s]
-Exhale.
-[BREATH OUT — 4s]
+[PAUSE 1s]
+Two.
+[PAUSE 1s]
+Three.
+[PAUSE 1s]
+Four.
+[PAUSE 1s]
+Out.
+[PAUSE 1s]
+Two.
+[PAUSE 1s]
+Three.
+[PAUSE 1s]
+Four.
+[PAUSE 1s]
 Hold.
-[HOLD — 4s]
+[PAUSE 1s]
+Two.
+[PAUSE 1s]
+Three.
+[PAUSE 1s]
+Four.
+
+[PAUSE 2s]
+
+[soft]
+Good. One more, and this time I'll just name each side. You keep the count in your head.
 
 [firmer]
-Inhale.
+In.
 [BREATH IN — 4s]
 Hold.
 [HOLD — 4s]
-Exhale.
-[BREATH OUT — 4s]
-Hold.
-[HOLD — 4s]
-
-[firmer]
-Inhale.
-[BREATH IN — 4s]
-Hold.
-[HOLD — 4s]
-Exhale.
-[BREATH OUT — 4s]
-Hold.
-[HOLD — 4s]
-
-[firmer]
-Inhale.
-[BREATH IN — 4s]
-Hold.
-[HOLD — 4s]
-Exhale.
+Out.
 [BREATH OUT — 4s]
 Hold.
 [HOLD — 4s]
 
 [PAUSE 2s]
 
-Continue the pattern on your own for two minutes. Four seconds each side of the box. If you lose track, just restart the cycle.
+Now continue on your own. Four counts each side of the box. If you lose track, just start a new square. I'll bring you back in about ninety seconds.
 
 [PAUSE 2s]
 
 Begin.
 
-[PAUSE 120s]
+[PAUSE 90s]
 
 [soft]
-Come back.
+Come back. Let your breath go normal.
 
 [PAUSE 3s]
 
-Box breathing has a different feel than extended exhale. It's less softening, more grounding. It puts you in your body without sedating you. This is the breath you use thirty seconds before sex starts. Not to get sleepy — to get present.
+If you ever feel lightheaded with the holds, that's your cue to shorten them — three counts, or even two. The square just needs to be even, not long.
 
 [PAUSE 2s]
 
-Practice it during the day. While waiting for an elevator. While stuck in traffic. Make it boring. Make it familiar. So when you actually need it under pressure, your body knows it cold.
+Box breathing has a different feel than extended exhale. Less softening, more grounding. It puts you in your body without making you sleepy. This is the breath for thirty seconds before sex starts — not to get drowsy, to get *present*.
 
 [PAUSE 2s]
 
-Two more days this week. Tomorrow we'll do something gentle for the pelvic floor — light maintenance, no straining.
+Practice it in dead moments during the day. Waiting for an elevator. Stuck in traffic. Make it boring and familiar, so under real pressure your body already knows it.
 
 [PAUSE 2s]
 
@@ -528,7 +706,23 @@ Today, light pelvic floor work.
 
 [PAUSE 2s]
 
-Quick context. The pelvic floor matters for ejaculatory control. But for your profile — anxiety-driven acquired PE — your floor isn't the main problem. What we're doing here is awareness work. Knowing where the muscle is. Knowing how to contract it gently and how to release it completely. That's it. We're not building strength. We're building literacy.
+Quick context.
+
+[PAUSE 1s]
+
+The pelvic floor matters for ejaculatory control.
+
+[PAUSE 1s]
+
+But for your profile — anxiety-driven acquired PE — your floor isn't the main problem.
+
+[PAUSE 1s]
+
+What we're doing here is awareness work. Knowing where the muscle is. Knowing how to contract it gently and how to release it completely.
+
+[PAUSE 1s]
+
+That's it. We're not building strength. We're building literacy.
 
 [PAUSE 2s]
 
@@ -544,7 +738,15 @@ Sit comfortably or lie on your back. Hand on belly. A few easy breaths to settle
 
 [PAUSE 5s]
 
-Now, gently, contract the pelvic floor. The muscles between the front and back, around the perineum. Imagine drawing them up and in. Gentle. Maybe twenty percent effort. Not your maximum.
+Now, gently, contract the pelvic floor. The muscles between the front and back, around the perineum.
+
+[PAUSE 1s]
+
+Imagine drawing them up and in.
+
+[PAUSE 1s]
+
+Gentle. Maybe twenty percent effort. Not your maximum.
 
 [PAUSE 3s]
 
@@ -556,7 +758,19 @@ And release. Fully. Let it drop. Let it become heavy and soft.
 
 [PAUSE 4s]
 
-That release is more important than the contraction. Read that again — the release matters more than the contraction. Most men forget this part. They contract, and then they hold low-level tension afterward. That's exactly what we don't want.
+That release is more important than the contraction.
+
+[PAUSE 1s]
+
+Read that again — the release matters more than the contraction.
+
+[PAUSE 1s]
+
+Most men forget this part — they contract, and then they hold low-level tension afterward.
+
+[PAUSE 1s]
+
+That's exactly what we don't want.
 
 [PAUSE 2s]
 
@@ -593,11 +807,27 @@ And release.
 
 [PAUSE 2s]
 
-Notice the floor at rest now. Soft. Unguarded. That's the resting state we want. During the day, periodically check in. If you notice you're holding tension down there, do one gentle contraction and a long, complete release. That's the reset.
+Notice the floor at rest now. Soft. Unguarded.
+
+[PAUSE 1s]
+
+That's the resting state we want.
+
+[PAUSE 1s]
+
+During the day, periodically check in. If you notice you're holding tension down there, do one gentle contraction and a long, complete release.
+
+[PAUSE 1s]
+
+That's the reset.
 
 [PAUSE 2s]
 
-For your variant, we'll do this kind of awareness work two or three times a week. Not daily. Not aggressively. The work that moves the needle for you is breath and attention — not pelvic floor strength.
+For your variant, we'll do this kind of awareness work two or three times a week. Not daily. Not aggressively.
+
+[PAUSE 1s]
+
+The work that moves the needle for you is breath and attention — not pelvic floor strength.
 
 [PAUSE 2s]
 
@@ -626,11 +856,23 @@ Let's take a minute to look back at what you've actually built.
 
 [PAUSE 2s]
 
-You've learned the framing. PE in your profile is a nervous system state problem. Sympathetic versus parasympathetic. Pressure versus presence.
+You've learned the framing.
+
+[PAUSE 1s]
+
+PE in your profile is a nervous system state problem. Sympathetic versus parasympathetic. Pressure versus presence.
 
 [PAUSE 2s]
 
-You've learned two breath tools. Extended exhale, for general calm. Box breathing, for grounding under pressure. These are now permanent tools you can use any time, in any situation, for the rest of your life.
+You've learned two breath tools.
+
+[PAUSE 1s]
+
+Extended exhale, for general calm. Box breathing, for grounding under pressure.
+
+[PAUSE 1s]
+
+These are now permanent tools you can use any time, in any situation, for the rest of your life.
 
 [PAUSE 2s]
 
@@ -642,11 +884,23 @@ You've learned about spectatoring — and started to see it in your own experien
 
 [PAUSE 2s]
 
-You've made first contact with the pelvic floor. Found it. Contracted it gently. Released it completely.
+You've made first contact with the pelvic floor.
+
+[PAUSE 1s]
+
+Found it. Contracted it gently. Released it completely.
 
 [PAUSE 2s]
 
-That's the foundation. None of it is dramatic. None of it is impressive on its own. But stacked together, week after week, it's how this actually works.
+That's the foundation.
+
+[PAUSE 1s]
+
+None of it is dramatic. None of it is impressive on its own.
+
+[PAUSE 1s]
+
+But stacked together, week after week, it's how this actually works.
 
 [PAUSE 2s]
 
@@ -659,7 +913,15 @@ First — we're going to start practicing during arousal. Solo work. We'll teach
 
 [PAUSE 2s]
 
-Second — we're going to introduce sensate-focus principles. These were developed in the 1960s and remain the gold standard for performance anxiety. They sound simple. They are not. We'll do them slowly.
+Second — we're going to introduce sensate-focus principles.
+
+[PAUSE 1s]
+
+These were developed in the 1960s and remain the gold standard for performance anxiety.
+
+[PAUSE 1s]
+
+They sound simple. They are not. We'll do them slowly.
 
 [PAUSE 2s]
 

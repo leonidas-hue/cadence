@@ -525,8 +525,8 @@
           ]
         },
         {
-          "id": "session_time",
-          "text": "How much time can you realistically commit per day?",
+          "id": "advancement_speed",
+          "text": "How would you like to pace your progress through the 8-week program?",
           "type": "single_select",
           "applies_to_variants": [
             "A",
@@ -534,23 +534,45 @@
             "C",
             "D"
           ],
-          "internal_note": "Determines session pacing. 5-min users get the minimum-viable session; 15-min users get the full session with all extras inline.",
+          "internal_note": "Controls how fast the user moves through the 8 weeks of structured content. Independent of how much time they spend per day (see daily_time_commitment). NOTE: we deliberately do not offer a 'compress to 4 weeks' option. The protocols have internal pacing logic — Day 15's stop-start work assumes Day 14 has consolidated, which requires a calendar day of non-practice. Compressing produces faster advancement but worse outcomes. Users who want more daily engagement should adjust daily_time_commitment, not advancement_speed.",
           "options": [
             {
-              "label": "5 minutes",
-              "value": 5
+              "label": "Standard — one core session per day (8 weeks total)",
+              "value": "standard"
             },
             {
-              "label": "10 minutes",
-              "value": 10
+              "label": "Extended — every other day (about 16 weeks). Good if life is busy or the daily cadence feels overwhelming.",
+              "value": "extended"
+            }
+          ]
+        },
+        {
+          "id": "daily_time_commitment",
+          "text": "How much time can you dedicate to practice on a typical day?",
+          "type": "single_select",
+          "applies_to_variants": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "internal_note": "Independent of advancement_speed. Determines how the daily plan composes around the user's core session. Higher tiers stack add-ons from the practice library (mindfulness, breath, body scan, reflection/journaling). Hard caps are enforced per practice type to prevent harm: pelvic floor work is capped regardless of time (>15min/day risks hypertonic patterns); stop-start/edging is capped at 2-3 sessions/week regardless of available time (consolidation requirement). The 'deep' tier surfaces additional generative practices, NOT additional protocol-track work.",
+          "options": [
+            {
+              "label": "Quick — 5-10 min. Just today's core session.",
+              "value": "quick"
             },
             {
-              "label": "15 minutes",
-              "value": 15
+              "label": "Standard — 15-25 min. Core session + one daily add-on.",
+              "value": "standard"
             },
             {
-              "label": "20+ minutes",
-              "value": 20
+              "label": "Extended — 30-45 min. Core + multiple add-ons + practice library stack.",
+              "value": "extended"
+            },
+            {
+              "label": "Deep — 45-60 min. Maximum stack of complementary practices plus reflection/journaling prompts.",
+              "value": "deep"
             }
           ]
         }

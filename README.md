@@ -10,7 +10,7 @@ diagnostic routing, ~104,000 words of audio scripts, no hardware, one-time prici
 | Phase 1 — Diagnostic + routing engine | ✅ Complete (13 tests passing) |
 | Phase 2 — Content scripting | ✅ Complete (4 variants × 8 weeks, ~246 sessions) |
 | QA pass (5-pass review) | ✅ Complete (Variants A/B/C/D, all priorities applied) |
-| Phase 2.5 — Audio production pipeline | ✅ Code ready, awaiting pilot generation |
+| Phase 2.5 — Audio production pipeline | ✅ Pilot generated & validated; Variant A weeks 1–5 rendered (83 MP3s) |
 | Phase 3 — Flutter app scaffold | ⏸ Pending pilot validation |
 | Phase 4 — Practice modes | ⏸ |
 | Phase 5 — Logging + progress | ⏸ |
@@ -31,7 +31,13 @@ python -m audio.estimate   # cost projection for full audio production
 python -m audio.pilot      # generate the validation batch (Variant A week 1)
 python test_routing.py     # 13 routing-engine tests
 python cli.py              # interactive intake (manually try the routing)
+python onboarding.py       # full onboarding test: diagnostic → audio → HTML page
 ```
+
+The onboarding harness runs you through the diagnostic, routes you to a variant,
+generates week-1 audio, and builds a static HTML page with embedded players.
+See **`ONBOARDING.md`** for full usage and flags (`--rebuild-html`, `--reset`,
+`--dry-run`, `--skip-audio`).
 
 ## The four variants
 
@@ -72,6 +78,7 @@ cadence/
 ├── voices.json                 ← ElevenLabs voice IDs and settings
 ├── test_routing.py             ← 13 tests
 ├── cli.py                      ← interactive routing CLI
+├── onboarding.py               ← week-1 test harness (diagnostic + audio + HTML)
 │
 ├── qa_variant_a.md             ← QA findings doc, all priorities applied
 └── qa_variants_bcd.md          ← QA findings doc, all priorities applied

@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cadence — Diagnostic Intake</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    background: #fafaf8;
+    color: #1c1c1c;
+    min-height: 100vh;
+    line-height: 1.55;
+}
+.app { max-width: 620px; margin: 0 auto; padding: 0 24px 80px; }
+
+/* ── Header ── */
+.hdr { padding: 24px 0 28px; }
+.brand { font-size: 18px; font-weight: 700; letter-spacing: -.3px; margin-bottom: 18px; }
+
+/* ── Progress ── */
+.prog { display: flex; align-items: center; }
+.prog-dot {
+    width: 26px; height: 26px; border-radius: 50%;
+    border: 2px solid #d4d4d0; background: white;
+    font-size: 11px; font-weight: 600; color: #aaa;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; position: relative; z-index: 1;
+    transition: all .18s;
+}
+.prog-dot.active { border-color: #1c1c1c; background: #1c1c1c; color: white; }
+.prog-dot.done   { border-color: #1c1c1c; background: #1c1c1c; color: white; }
+.prog-dot.result-dot {
+    width: 28px; height: 28px; font-size: 13px;
+    border-style: dashed;
+}
+.prog-dot.result-dot.active { border-style: solid; }
+.prog-dot.result-dot.done   { border-style: solid; }
+.prog-line { flex: 1; height: 2px; background: #d4d4d0; transition: background .18s; }
+.prog-line.done { background: #1c1c1c; }
+.prog-label {
+    font-size: 11px; color: #888; text-align: center;
+    margin-top: 6px; display: block;
+}
+
+/* ── Section header ── */
+.sec-label {
+    font-size: 11px; text-transform: uppercase; letter-spacing: .08em;
+    color: #999; font-weight: 600; margin-bottom: 4px;
+}
+.sec-title { font-size: 21px; font-weight: 700; margin-bottom: 8px; line-height: 1.25; }
+.sec-desc { font-size: 14px; color: #555; line-height: 1.65; margin-bottom: 24px; }
+
+/* ── Questions ── */
+.q-card {
+    background: white; border: 1px solid #e0e0d8;
+    border-radius: 10px; padding: 18px 20px; margin-bottom: 10px;
+}
+.q-text { font-size: 15px; font-weight: 500; margin-bottom: 4px; line-height: 1.4; }
+.q-help { font-size: 12px; color: #999; margin-bottom: 12px; font-style: italic; line-height: 1.5; }
+.options { display: flex; flex-direction: column; gap: 6px; margin-top: 12px; }
+.opt {
+    display: flex; align-items: center; gap: 10px;
+    padding: 9px 12px; border-radius: 6px;
+    border: 1px solid #e8e8e2; cursor: pointer;
+    transition: all .1s; font-size: 14px; color: #333; background: white;
+    user-select: none;
+}
+.opt:hover { border-color: #bbb; background: #fafaf8; }
+.opt.sel { border-color: #1c1c1c; background: #f5f5f3; color: #1c1c1c; font-weight: 500; }
+.opt input { display: none; }
+.odot {
+    width: 16px; height: 16px; border-radius: 50%;
+    border: 2px solid #ccc; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    transition: all .1s;
+}
+.opt.sel .odot { border-color: #1c1c1c; background: #1c1c1c; }
+.opt.sel .odot::after { content: ''; display: block; width: 6px; height: 6px; border-radius: 50%; background: white; }
+
+/* ── Yes / No ── */
+.yn { display: flex; gap: 8px; margin-top: 12px; }
+.yn-btn {
+    flex: 1; padding: 10px; border-radius: 6px;
+    border: 1px solid #e8e8e2; background: white;
+    font-size: 14px; font-weight: 500; cursor: pointer;
+    text-align: center; transition: all .1s; color: #555;
+    user-select: none;
+}
+.yn-btn:hover { border-color: #bbb; }
+.yn-yes.active { border-color: #1c1c1c; background: #1c1c1c; color: white; }
+.yn-no.active  { border-color: #888; background: #f0f0ee; color: #444; }
+
+/* ── Nav ── */
+.nav { display: flex; justify-content: space-between; align-items: center; margin-top: 28px; }
+.btn-back {
+    background: none; border: none; color: #999;
+    font-size: 14px; cursor: pointer; padding: 8px 4px;
+}
+.btn-back:hover { color: #333; }
+.btn-next {
+    background: #1c1c1c; color: white; border: none;
+    border-radius: 8px; padding: 11px 26px;
+    font-size: 15px; font-weight: 600; cursor: pointer;
+    transition: opacity .15s; margin-left: auto;
+}
+.btn-next:disabled { opacity: .32; cursor: not-allowed; }
+.btn-next:hover:not(:disabled) { opacity: .78; }
+.progress-text { font-size: 13px; color: #999; }
+
+/* ── Result card ── */
+.result-card {
+    background: white; border-radius: 12px;
+    border: 1px solid #e0e0d8; margin-bottom: 20px; overflow: hidden;
+}
+.result-top { padding: 22px 22px 16px; }
+.result-row { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 14px; }
+.vbadge {
+    width: 48px; height: 48px; border-radius: 10px;
+    font-size: 24px; font-weight: 800; color: white;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+}
+.va .vbadge { background: #1c1c1c; }
+.vb .vbadge { background: #92400e; }
+.vc .vbadge { background: #1d4ed8; }
+.vd .vbadge { background: #6d28d9; }
+.vname { font-size: 18px; font-weight: 700; line-height: 1.25; margin-bottom: 3px; }
+.vsubname { font-size: 13px; color: #666; }
+.sev {
+    display: inline-block; font-size: 11px; font-weight: 600;
+    padding: 1px 9px; border-radius: 20px; margin-left: 6px; vertical-align: 2px;
+}
+.sev-subclinical { background: #f0f0ee; color: #888; }
+.sev-mild        { background: #dcfce7; color: #166534; }
+.sev-moderate    { background: #fef3c7; color: #92400e; }
+.sev-severe      { background: #fee2e2; color: #b91c1c; }
+
+.safety-note {
+    background: #fffbeb; border-left: 4px solid #d97706;
+    padding: 10px 14px; font-size: 13px; color: #78350f;
+    margin: 0 22px 16px; border-radius: 0 6px 6px 0; line-height: 1.5;
+}
+.reasoning-head {
+    font-size: 11px; text-transform: uppercase; letter-spacing: .08em;
+    color: #999; font-weight: 600; margin-bottom: 8px; padding: 0 22px;
+}
+.reasoning-item {
+    font-size: 13.5px; color: #333; line-height: 1.6;
+    padding: 8px 22px; border-top: 1px solid #f0f0ee;
+}
+.reasoning-item::before { content: "— "; color: #bbb; }
+
+.flags-row { display: flex; flex-wrap: wrap; gap: 5px; padding: 12px 22px 16px; border-top: 1px solid #f0f0ee; }
+.chip {
+    font-size: 11px; background: #f0f0ee; color: #555;
+    padding: 2px 8px; border-radius: 20px; font-family: monospace;
+}
+.chip.warn { background: #fef3c7; color: #92400e; }
+
+.scores-toggle {
+    font-size: 13px; color: #aaa; cursor: pointer;
+    padding: 10px 22px; border-top: 1px solid #f0f0ee;
+    display: flex; justify-content: space-between;
+}
+.scores-toggle:hover { color: #666; }
+.scores-body { padding: 0 22px 14px; display: none; }
+.scores-body.open { display: block; }
+.score-row {
+    display: flex; justify-content: space-between;
+    font-size: 12px; padding: 3px 0; color: #555;
+    border-bottom: 1px solid #f8f8f6;
+}
+.score-row:last-child { border-bottom: none; }
+.score-k { color: #999; }
+.score-v { font-family: monospace; font-weight: 600; }
+
+/* ── Intro ── */
+.intro-card {
+    background: white; border: 1px solid #e0e0d8;
+    border-radius: 12px; padding: 28px 28px 24px; margin-bottom: 20px;
+}
+.intro-title { font-size: 26px; font-weight: 700; margin-bottom: 10px; line-height: 1.2; }
+.intro-desc { font-size: 15px; color: #444; line-height: 1.65; margin-bottom: 18px; }
+.intro-steps { display: flex; flex-direction: column; gap: 8px; }
+.intro-step { display: flex; gap: 10px; align-items: flex-start; font-size: 14px; color: #555; }
+.istep-n {
+    width: 20px; height: 20px; border-radius: 50%; background: #f0f0ee;
+    color: #777; font-size: 11px; font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; margin-top: 2px;
+}
+.privacy { font-size: 12px; color: #aaa; text-align: center; margin-top: 12px; }
+
+/* ── Summary ── */
+.summary-icon { font-size: 44px; text-align: center; margin-bottom: 12px; }
+.summary-title { font-size: 22px; font-weight: 700; text-align: center; margin-bottom: 6px; }
+.summary-sub { font-size: 14px; color: #666; text-align: center; margin-bottom: 28px; }
+.sum-card {
+    background: white; border: 1px solid #e0e0d8;
+    border-radius: 10px; padding: 18px 20px; margin-bottom: 12px;
+}
+.sum-card-title {
+    font-size: 11px; text-transform: uppercase; letter-spacing: .08em;
+    color: #999; font-weight: 600; margin-bottom: 10px;
+}
+.sum-row {
+    display: flex; gap: 8px; font-size: 13.5px; padding: 5px 0;
+    border-bottom: 1px solid #f5f5f3;
+}
+.sum-row:last-child { border-bottom: none; }
+.sum-key { color: #999; min-width: 160px; font-size: 13px; }
+.btn-start {
+    display: block; width: 100%; background: #1c1c1c; color: white;
+    border: none; border-radius: 10px; padding: 15px;
+    font-size: 16px; font-weight: 600; cursor: pointer;
+    margin-top: 22px; transition: opacity .15s; text-align: center;
+}
+.btn-start:hover { opacity: .78; }
+.retake { display: block; text-align: center; margin-top: 14px; font-size: 13px; color: #aaa; cursor: pointer; text-decoration: underline; text-underline-offset: 2px; }
+.retake:hover { color: #555; }
+
+/* ── Fade-in ── */
+.fade { animation: fadeIn .18s ease; }
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(5px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.tester-note {
+    font-size: 12px; color: #b87a00; background: #fff8e1;
+    border-left: 3px solid #f4b400; padding: 8px 12px;
+    border-radius: 0 4px 4px 0; margin-bottom: 20px;
+}
+</style>
+</head>
+<body>
+<div class="app" id="app"></div>
+
+<script>
+// ─────────────────────────────────────────────────────────────
+// Questions data (mirrors questions.json)
+// ─────────────────────────────────────────────────────────────
+const SECTIONS = [
+  {
+    id: "pedt5",
+    label: "Section 1 of 5",
+    title: "Ejaculation Control",
+    desc: "Five quick questions used by clinicians worldwide to assess ejaculation control. Answer honestly — there are no right answers, and your responses stay in this browser.",
+    questions: [
+      { id:"pedt5_1", type:"single_select", text:"How difficult is it for you to delay ejaculation?",
+        options:[{l:"Not difficult at all",v:0},{l:"Somewhat difficult",v:1},{l:"Moderately difficult",v:2},{l:"Very difficult",v:3},{l:"Extremely difficult",v:4}]},
+      { id:"pedt5_2", type:"single_select", text:"Do you ejaculate before you want to?",
+        options:[{l:"Almost never or never",v:0},{l:"Less than half the time",v:1},{l:"About half the time",v:2},{l:"More than half the time",v:3},{l:"Almost always or always",v:4}]},
+      { id:"pedt5_3", type:"single_select", text:"Do you ejaculate with very little stimulation?",
+        options:[{l:"Almost never or never",v:0},{l:"Less than half the time",v:1},{l:"About half the time",v:2},{l:"More than half the time",v:3},{l:"Almost always or always",v:4}]},
+      { id:"pedt5_4", type:"single_select", text:"Do you feel frustrated because of ejaculating before you want to?",
+        options:[{l:"Not at all",v:0},{l:"Slightly",v:1},{l:"Moderately",v:2},{l:"Very",v:3},{l:"Extremely",v:4}]},
+      { id:"pedt5_5", type:"single_select", text:"How concerned are you that your time to ejaculation leaves your partner sexually unfulfilled?",
+        options:[{l:"Not at all concerned",v:0},{l:"Slightly concerned",v:1},{l:"Moderately concerned",v:2},{l:"Very concerned",v:3},{l:"Extremely concerned",v:4}]},
+    ]
+  },
+  {
+    id: "hypertonic",
+    label: "Section 2 of 5",
+    title: "Pelvic Floor Tension",
+    desc: "These questions check for a chronically tense pelvic floor — a pattern that responds to a different kind of training than standard Kegels. There's no right answer.",
+    questions: [
+      { id:"hyper_1", type:"yes_no", text:"Do you frequently notice yourself clenching your pelvic, glute, or abdominal muscles when stressed or anxious?" },
+      { id:"hyper_2", type:"yes_no", text:"Do you experience tension, tightness, or discomfort in your perineum, groin, or lower pelvis (not during sex)?" },
+      { id:"hyper_3", type:"yes_no", text:"Do you have noticeably tight hip flexors or limited hip mobility (e.g. difficulty squatting deep, sitting cross-legged comfortably)?" },
+      { id:"hyper_4", type:"yes_no", text:"Do you experience urinary urgency, frequency, or a feeling of incomplete emptying?" },
+      { id:"hyper_5", type:"yes_no", text:"Do you experience discomfort, numbness, or tension after sitting for long periods (>30 minutes)?" },
+      { id:"hyper_6", type:"yes_no", text:"Do you experience pain, tension, or a 'painful contraction' feeling during or shortly after ejaculation?" },
+      { id:"hyper_7", type:"yes_no", text:"When you try to push your pelvic floor outward (as if starting to urinate), is it difficult or unfamiliar to do?" },
+    ]
+  },
+  {
+    id: "masturbation",
+    label: "Section 3 of 5",
+    title: "Masturbation & Stimulus Patterns",
+    desc: "Masturbation habits — pace, grip, and stimulus type — shape how your body responds during sex. Skip anything that doesn't apply.",
+    questions: [
+      { id:"mast_porn_freq", type:"single_select", text:"How often do you currently use pornography?",
+        options:[{l:"Never",v:0},{l:"Occasionally (less than weekly)",v:1},{l:"Weekly",v:2},{l:"Several times per week",v:3},{l:"Daily",v:4},{l:"Multiple times per day",v:5}]},
+      { id:"mast_grip", type:"single_select", text:"When you masturbate, how would you describe your grip pressure?",
+        options:[{l:"Light",v:0},{l:"Medium",v:1},{l:"Firm",v:2},{l:"Very firm / tight grip",v:3}]},
+      { id:"mast_pace", type:"single_select", text:"When you masturbate, how would you describe your pace?",
+        options:[{l:"Slow and varied",v:0},{l:"Medium",v:1},{l:"Fast",v:2},{l:"Very fast and consistent",v:3}]},
+      { id:"mast_without_porn", type:"single_select",
+        text:"When you masturbate without pornography, how difficult do you find it to become aroused or climax?",
+        help:"Answer based on experience, or imagine trying. If you've never masturbated without porn, choose 'Almost always difficult'.",
+        options:[{l:"Not difficult — I rarely or never use porn anyway",v:0},{l:"Sometimes difficult",v:1},{l:"Often difficult",v:2},{l:"Almost always difficult",v:3}]},
+      { id:"mast_porn_history", type:"single_select",
+        text:"Did you previously use pornography heavily for an extended period (a year or more), even if you don't currently?",
+        help:"Patterns from heavy use can persist long after stopping — this helps tailor your protocol.",
+        options:[{l:"No — I never used porn heavily",v:"never"},{l:"Yes — stopped or significantly reduced over a year ago",v:"past_stopped"},{l:"Yes — stopped or significantly reduced within the last year",v:"past_recent"},{l:"Yes — and I still use it currently",v:"current"}]},
+    ]
+  },
+  {
+    id: "onset",
+    label: "Section 4 of 5",
+    title: "Onset",
+    desc: "When the issue started matters. Long-standing patterns and recent ones often respond to different approaches.",
+    questions: [
+      { id:"onset_when", type:"single_select", text:"When did your concerns about ejaculation timing begin?",
+        options:[{l:"Since my first sexual experiences (lifelong)",v:"lifelong"},{l:"After a period of normal control (acquired)",v:"acquired"},{l:"I'm not sure / it has varied",v:"unsure"}]},
+    ]
+  },
+  {
+    id: "baseline",
+    label: "Section 5 of 5",
+    title: "Baseline",
+    desc: "A starting point to measure against. Your best estimate is fine.",
+    questions: [
+      { id:"baseline_ielt", type:"single_select", text:"On average, how long do you typically last during partnered intercourse, from penetration to ejaculation?",
+        options:[{l:"Under 30 seconds",v:.5},{l:"30 seconds to 1 minute",v:1.0},{l:"1–2 minutes",v:1.5},{l:"2–3 minutes",v:2.5},{l:"3–5 minutes",v:4.0},{l:"5–10 minutes",v:7.5},{l:"Over 10 minutes",v:12.0},{l:"Not currently sexually active with a partner",v:-1}]},
+      { id:"baseline_anxiety", type:"single_select", text:"Would you describe yourself as significantly anxious or worried about your sexual performance?",
+        options:[{l:"Not at all",v:0},{l:"A little",v:1},{l:"Moderately",v:2},{l:"Very",v:3},{l:"Extremely",v:4}]},
+    ]
+  },
+];
+
+const PREFS_QUESTIONS = [
+  { id:"addon_pelvic", type:"single_select",
+    text:"Would you like supplementary pelvic floor training in your routine?",
+    applies_to:["A","D"],
+    options:[{l:"Yes — add short PFM sessions a few times per week",v:"yes"},{l:"No — stick to the recommended protocol",v:"no"}]},
+  { id:"addon_breathwork", type:"single_select",
+    text:"Would you like extra breathwork and parasympathetic training sessions?",
+    applies_to:["B","C","D"],
+    options:[{l:"Yes — add extra breathwork sessions",v:"yes"},{l:"No — stick to the recommended protocol",v:"no"}]},
+  { id:"addon_mindfulness", type:"single_select",
+    text:"Would you like to add daily mindfulness sessions (5–10 min) alongside your protocol?",
+    applies_to:["A","B","C","D"],
+    options:[{l:"Yes — add daily mindfulness",v:"yes"},{l:"No — stick to the recommended protocol",v:"no"}]},
+  { id:"advancement_speed", type:"single_select",
+    text:"How would you like to pace your progress through the 8-week program?",
+    applies_to:["A","B","C","D"],
+    options:[{l:"Standard — one core session per day (8 weeks)",v:"standard"},{l:"Extended — every other day (~16 weeks). Good if life is busy.",v:"extended"}]},
+  { id:"daily_time_commitment", type:"single_select",
+    text:"How much time can you dedicate to practice on a typical day?",
+    applies_to:["A","B","C","D"],
+    options:[{l:"Quick — 5–10 min. Just today's core session.",v:"quick"},{l:"Standard — 15–25 min. Core + one daily add-on.",v:"standard"},{l:"Extended — 30–45 min. Core + multiple add-ons.",v:"extended"},{l:"Deep — 45–60 min. Maximum stack + reflection.",v:"deep"}]},
+];
+
+// ─────────────────────────────────────────────────────────────
+// Routing (exact mirror of routing.py)
+// ─────────────────────────────────────────────────────────────
+function route(r) {
+    const pedt5 = [1,2,3,4,5].reduce((s,i) => s + r[`pedt5_${i}`], 0);
+    const pedt5_class = pedt5 >= 11 ? "pe" : pedt5 >= 9 ? "probable_pe" : "no_pe";
+    const severity = pedt5 >= 16 ? "severe" : pedt5 >= 11 ? "moderate" : pedt5 >= 9 ? "mild" : "subclinical";
+    const hyper = [1,2,3,4,5,6,7].filter(i => r[`hyper_${i}`] === true).length;
+
+    const onset         = r.onset_when;
+    const porn_freq     = r.mast_porn_freq;
+    const grip          = r.mast_grip;
+    const pace          = r.mast_pace;
+    const porn_dep      = r.mast_without_porn;
+    const porn_hist     = r.mast_porn_history || "never";
+    const ielt          = r.baseline_ielt;
+    const anxiety       = r.baseline_anxiety;
+
+    const scores = { pedt5_total: pedt5, pedt5_class, severity, hypertonic_total: hyper,
+                     ielt_minutes: ielt === -1 ? "not active" : ielt, anxiety };
+
+    // Subclinical short-circuit
+    const hist_signal = ["past_recent","past_stopped","current"].includes(porn_hist) && (grip >= 2 || pace >= 2);
+    const subclinical = pedt5_class === "no_pe" && hyper < 3
+        && !(porn_freq >= 3 && porn_dep >= 2) && !hist_signal
+        && (ielt < 0 || ielt >= 3.0);
+
+    // Priority 1 — Hypertonic (safety-critical)
+    if (hyper >= 3) return {
+        variant: "B", name: "Hypertonic Pelvic Floor",
+        reasoning: [
+            `You showed ${hyper} of 7 indicators of pelvic floor tension. This pattern is common but often missed.`,
+            "Standard Kegel exercises are not appropriate as a starting point for this profile and can make symptoms worse. Your protocol prioritises pelvic floor relaxation, diaphragmatic breathing, and hip mobility instead.",
+            "Strong recommendation: see a pelvic floor physiotherapist alongside this program. Cadence is most effective as a supplement to in-person care for this profile.",
+        ],
+        flags: ["hypertonic","recommend_pt","no_standard_kegels_initially"],
+        scores, severity, safety: true,
+    };
+
+    // Priority 2 — Porn-conditioned
+    const porn_heavy_current = porn_freq >= 3;
+    const porn_heavy_past    = ["past_recent","past_stopped"].includes(porn_hist);
+    const porn_heavy_either  = porn_heavy_current || porn_heavy_past;
+    const grip_intense       = grip >= 2;
+    const pace_fast          = pace >= 2;
+    const porn_dependent     = porn_dep >= 2;
+
+    if (porn_heavy_either && (grip_intense || pace_fast || porn_dependent)) {
+        const is_current = porn_heavy_current || porn_hist === "current";
+        const flags = ["porn_conditioned","recondition"];
+        let lead;
+        if (is_current) {
+            flags.push("porn_current","porn_taper");
+            lead = "Heavy current pornography use is combined with conditioning signals (grip pressure, pace, or stimulus dependency).";
+        } else {
+            flags.push("porn_past");
+            lead = "Past heavy pornography use is combined with persistent conditioning signals. Patterns established during heavy use often persist long after the use itself has stopped.";
+        }
+        return {
+            variant: "D", name: "Porn-Conditioned / Masturbation-Pattern",
+            reasoning: [
+                lead,
+                "Your nervous system has likely calibrated to a level of stimulation that's difficult to replicate with a partner. The protocol focuses on recalibrating your masturbation patterns and arousal thresholds.",
+                "Pelvic floor work is included but is not the primary lever for your profile.",
+            ],
+            flags, scores, severity,
+        };
+    }
+
+    // Priority 3 — Lifelong / hypotonic
+    if (onset === "lifelong" && (ielt < 0 || ielt < 1.5)) return {
+        variant: "C", name: "Lifelong / Hypotonic PE",
+        reasoning: [
+            "Lifelong onset combined with a very short baseline IELT suggests a profile that's more neurobiological than situational.",
+            "Your protocol builds pelvic floor control progressively over 8–12 weeks and integrates edging practice. Behavioural training will take longer for this profile — be patient.",
+            "Pharmacological options (dapoxetine, topical lidocaine) are covered as educational content. They can serve as a legitimate bridge while you build skills.",
+        ],
+        flags: ["lifelong","consider_pharma","extended_timeline"],
+        scores, severity,
+    };
+
+    // Subclinical advisory
+    if (subclinical) return {
+        variant: "A", name: "Anxiety-Driven Acquired PE",
+        subclinical: true,
+        reasoning: [
+            "Your PEDT-5 score is in the range that does not indicate clinically significant PE.",
+            "If you'd like to build greater control and presence regardless, this protocol still works well — but you may not need a full intervention.",
+            "Consider whether the underlying issue is performance anxiety rather than ejaculatory timing per se.",
+        ],
+        flags: ["subclinical","anxiety","optional_program"],
+        scores, severity,
+    };
+
+    // Default — Variant A
+    return {
+        variant: "A", name: "Anxiety-Driven Acquired PE",
+        reasoning: [
+            "Your profile points to acquired PE driven primarily by performance anxiety rather than pelvic floor dysfunction or stimulus conditioning.",
+            "The protocol emphasises breathwork, parasympathetic activation, cognitive restructuring, and sensate-focus principles. Pelvic floor work is included but light.",
+            "This is generally a more responsive profile than lifelong PE — there's a clear cause (anxiety) that the protocol directly targets. Most users start to notice changes by week 4–6.",
+        ],
+        flags: ["anxiety","acquired"].concat(anxiety >= 3 ? ["high_anxiety"] : []),
+        scores, severity,
+    };
+}
+
+// ─────────────────────────────────────────────────────────────
+// State
+// ─────────────────────────────────────────────────────────────
+// step: 0=intro, 1-5=sections, 6=result, 7=prefs, 8=summary
+let step = 0;
+let responses = {};
+let result = null;
+
+// ─────────────────────────────────────────────────────────────
+// Helpers
+// ─────────────────────────────────────────────────────────────
+function sectionComplete(sec) {
+    return sec.questions.every(q => responses[q.id] !== undefined);
+}
+function prefsComplete() {
+    const variant = result ? result.variant : null;
+    const visible = PREFS_QUESTIONS.filter(q => q.applies_to.includes(variant));
+    return visible.every(q => responses[q.id] !== undefined);
+}
+
+// ─────────────────────────────────────────────────────────────
+// Progress bar (dots: 5 sections + result + prefs)
+// ─────────────────────────────────────────────────────────────
+function renderProgress() {
+    // steps: 1..5 = sections, 6 = result/prefs (we merge for simplicity)
+    const labels = ["PEDT-5","Tension","Patterns","Onset","Baseline","Result","Prefs"];
+    let html = '';
+    for (let i = 0; i < 7; i++) {
+        const snum = i + 1; // 1-based
+        // dot state
+        let cls = 'prog-dot';
+        if (i === 5 || i === 6) cls += ' result-dot';
+        if (step === 0 || step - 1 < i) cls += '';            // future
+        else if (step - 1 === i) cls += ' active';
+        else cls += ' done';
+        // step 0 = intro → nothing active in progress
+        if (step === 0) cls = 'prog-dot' + (i >= 5 ? ' result-dot' : '');
+
+        const label = i < 5 ? (i+1) : (i === 5 ? '★' : '✓');
+        html += `<div class="${cls}" title="${labels[i]}">${label}</div>`;
+        if (i < 6) {
+            const lineDone = step > 0 && step - 1 > i;
+            html += `<div class="prog-line${lineDone ? ' done' : ''}"></div>`;
+        }
+    }
+    return html;
+}
+
+// ─────────────────────────────────────────────────────────────
+// Render a section's questions
+// ─────────────────────────────────────────────────────────────
+function renderQuestions(questions) {
+    return questions.map(q => {
+        const val = responses[q.id];
+        let inputHtml = '';
+        if (q.type === 'single_select') {
+            inputHtml = `<div class="options">` + q.options.map(o => {
+                const sel = val !== undefined && val === o.v ? ' sel' : '';
+                return `<label class="opt${sel}" onclick="pick('${q.id}', ${JSON.stringify(o.v)})">
+                    <input type="radio" name="${q.id}" value="${o.v}">
+                    <span class="odot"></span>
+                    <span>${o.l}</span>
+                </label>`;
+            }).join('') + `</div>`;
+        } else {
+            // yes_no
+            const ysel = val === true  ? ' active' : '';
+            const nsel = val === false ? ' active' : '';
+            inputHtml = `<div class="yn">
+                <button class="yn-btn yn-yes${ysel}" onclick="pick('${q.id}', true)">Yes</button>
+                <button class="yn-btn yn-no${nsel}"  onclick="pick('${q.id}', false)">No</button>
+            </div>`;
+        }
+        return `<div class="q-card">
+            <div class="q-text">${q.text}</div>
+            ${q.help ? `<div class="q-help">${q.help}</div>` : ''}
+            ${inputHtml}
+        </div>`;
+    }).join('');
+}
+
+// ─────────────────────────────────────────────────────────────
+// Render result card
+// ─────────────────────────────────────────────────────────────
+function renderResultCard(res) {
+    const vc = `v${res.variant.toLowerCase()}`;
+    const sevCls = `sev-${res.severity}`;
+    const sevLabel = res.severity.charAt(0).toUpperCase() + res.severity.slice(1);
+
+    const safetyHtml = res.safety ? `<div class="safety-note">
+        ⚠ Safety routing: standard Kegel protocols are contraindicated for this profile.
+        Always refer to a pelvic floor physiotherapist.
+    </div>` : '';
+
+    const flagsHtml = res.flags.map(f => {
+        const warn = ["hypertonic","recommend_pt","no_standard_kegels_initially","high_anxiety","porn_taper"].includes(f);
+        return `<span class="chip${warn?' warn':''}">${f}</span>`;
+    }).join('');
+
+    const scoresHtml = Object.entries(res.scores).map(([k,v]) =>
+        `<div class="score-row"><span class="score-k">${k}</span><span class="score-v">${v}</span></div>`
+    ).join('');
+
+    const subclinNote = res.subclinical ? `<div style="font-size:13px;color:#92400e;background:#fff8e1;padding:8px 14px;border-radius:6px;margin:0 22px 14px;line-height:1.5;">
+        Advisory: PEDT-5 score is subclinical. User is not required to complete the program.
+    </div>` : '';
+
+    return `<div class="result-card ${vc}">
+        <div class="result-top">
+            <div class="result-row">
+                <div class="vbadge">${res.variant}</div>
+                <div>
+                    <div class="vname">${res.name} <span class="sev ${sevCls}">${sevLabel}</span></div>
+                    <div class="vsubname">Variant ${res.variant} protocol</div>
+                </div>
+            </div>
+        </div>
+        ${safetyHtml}
+        ${subclinNote}
+        <div class="reasoning-head">Why this protocol</div>
+        ${res.reasoning.map(r => `<div class="reasoning-item">${r}</div>`).join('')}
+        <div class="flags-row">${flagsHtml}</div>
+        <div class="scores-toggle" onclick="toggleScores(this)">
+            Debug: raw scores &nbsp;<span>▾</span>
+        </div>
+        <div class="scores-body">${scoresHtml}</div>
+    </div>`;
+}
+
+// ─────────────────────────────────────────────────────────────
+// Main render
+// ─────────────────────────────────────────────────────────────
+function render() {
+    const app = document.getElementById('app');
+    let body = '';
+
+    if (step === 0) {
+        // Intro
+        body = `
+        <div class="intro-card fade">
+            <div class="intro-title">Find your protocol.</div>
+            <div class="intro-desc">Answer five short sections and Cadence will route you to the right 8-week protocol. Takes about 3 minutes.</div>
+            <div class="intro-steps">
+                <div class="intro-step"><div class="istep-n">1</div>Ejaculation control (PEDT-5 validated scale)</div>
+                <div class="intro-step"><div class="istep-n">2</div>Pelvic floor tension check (safety routing)</div>
+                <div class="intro-step"><div class="istep-n">3</div>Masturbation &amp; stimulus patterns</div>
+                <div class="intro-step"><div class="istep-n">4</div>Onset history</div>
+                <div class="intro-step"><div class="istep-n">5</div>Baseline &amp; anxiety</div>
+            </div>
+        </div>
+        <div class="privacy">Responses stay in your browser. No data is sent anywhere.</div>
+        <div class="nav">
+            <button class="btn-next" onclick="advance()">Begin →</button>
+        </div>`;
+    } else if (step >= 1 && step <= 5) {
+        const sec = SECTIONS[step - 1];
+        const complete = sectionComplete(sec);
+        const answered = sec.questions.filter(q => responses[q.id] !== undefined).length;
+        body = `
+        <div class="fade">
+            <div class="sec-label">${sec.label}</div>
+            <div class="sec-title">${sec.title}</div>
+            <div class="sec-desc">${sec.desc}</div>
+            ${step === 1 ? '<div class="tester-note">Tester note: PEDT-5 ≥11 = PE, 9-10 = probable PE, ≤8 = unlikely. Routes to Variant A unless overridden by other signals.</div>' : ''}
+            ${step === 2 ? '<div class="tester-note">Tester note: ≥3 Yes → Variant B (safety-critical). This check runs before all others.</div>' : ''}
+            ${renderQuestions(sec.questions)}
+            <div class="nav">
+                <button class="btn-back" onclick="goBack()">← Back</button>
+                <span class="progress-text">${answered}/${sec.questions.length} answered</span>
+                <button class="btn-next" ${complete ? '' : 'disabled'} onclick="advance()">
+                    ${step === 5 ? 'See my result →' : 'Next →'}
+                </button>
+            </div>
+        </div>`;
+    } else if (step === 6) {
+        // Result
+        body = `
+        <div class="fade">
+            <div class="sec-label">Your protocol</div>
+            <div class="sec-title">Routing complete</div>
+            <div class="sec-desc" style="margin-bottom:20px;">Based on your responses, here's your protocol assignment.</div>
+            ${renderResultCard(result)}
+            <div class="nav">
+                <button class="btn-back" onclick="goBack()">← Back</button>
+                <button class="btn-next" onclick="advance()">Personalise →</button>
+            </div>
+        </div>`;
+    } else if (step === 7) {
+        // Preferences
+        const variant = result.variant;
+        const visible = PREFS_QUESTIONS.filter(q => q.applies_to.includes(variant));
+        const complete = prefsComplete();
+        const answered = visible.filter(q => responses[q.id] !== undefined).length;
+        body = `
+        <div class="fade">
+            <div class="sec-label">Personalise</div>
+            <div class="sec-title">Your daily plan</div>
+            <div class="sec-desc">These optional add-ons let you go deeper in areas you care about without changing the core protocol.</div>
+            ${renderQuestions(visible)}
+            <div class="nav">
+                <button class="btn-back" onclick="goBack()">← Back</button>
+                <span class="progress-text">${answered}/${visible.length} answered</span>
+                <button class="btn-next" ${complete ? '' : 'disabled'} onclick="advance()">Confirm →</button>
+            </div>
+        </div>`;
+    } else if (step === 8) {
+        // Summary
+        const variant = result.variant;
+        const visible = PREFS_QUESTIONS.filter(q => q.applies_to.includes(variant));
+        const prefRows = visible.map(q => {
+            const v = responses[q.id];
+            const label = q.options.find(o => o.v === v)?.l || v;
+            return `<div class="sum-row"><span class="sum-key">${q.text.split('?')[0].slice(0,50)}…</span><span>${label}</span></div>`;
+        }).join('');
+
+        const advSpeed = responses.advancement_speed || '—';
+        const timeCommit = responses.daily_time_commitment || '—';
+
+        body = `
+        <div class="fade">
+            <div class="summary-icon">✓</div>
+            <div class="summary-title">Ready to start</div>
+            <div class="summary-sub">Here's your personalised protocol summary.</div>
+            ${renderResultCard(result)}
+            <div class="sum-card">
+                <div class="sum-card-title">Preferences</div>
+                ${prefRows || '<div style="font-size:13px;color:#aaa;">No applicable add-ons for this variant.</div>'}
+            </div>
+            <button class="btn-start" onclick="alert('This is a test environment — production routing here.')">
+                Start Variant ${variant} Program →
+            </button>
+            <span class="retake" onclick="restart()">Start over</span>
+        </div>`;
+    }
+
+    app.innerHTML = `
+        <div class="hdr">
+            <div class="brand">Cadence</div>
+            <div class="prog">${renderProgress()}</div>
+        </div>
+        ${body}`;
+}
+
+// ─────────────────────────────────────────────────────────────
+// Event handlers
+// ─────────────────────────────────────────────────────────────
+function pick(id, val) {
+    responses[id] = val;
+    render();
+}
+
+function advance() {
+    if (step === 5) {
+        // Run routing before moving to result
+        result = route(responses);
+    }
+    step++;
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    render();
+}
+
+function goBack() {
+    if (step > 0) { step--; window.scrollTo({ top: 0, behavior: 'smooth' }); render(); }
+}
+
+function restart() {
+    step = 0; responses = {}; result = null;
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    render();
+}
+
+function toggleScores(el) {
+    const body = el.nextElementSibling;
+    body.classList.toggle('open');
+    el.querySelector('span').textContent = body.classList.contains('open') ? '▴' : '▾';
+}
+
+// Init
+render();
+</script>
+</body>
+</html>

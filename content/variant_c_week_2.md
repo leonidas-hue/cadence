@@ -486,9 +486,61 @@ If you've let it slip, this is the session that brings it back.
 
 [PAUSE 3s]
 
-Lie down or sit. Three minutes of four-eight, just the practice.
+Lie down or sit. Four-eight — I'll count the first two.
 
 [PAUSE 1s]
+
+[soft]
+In.
+[PAUSE 1s]
+Two.
+[PAUSE 1s]
+Three.
+[PAUSE 1s]
+Four.
+[PAUSE 1s]
+Out.
+[PAUSE 1s]
+Two.
+[PAUSE 1s]
+Three.
+[PAUSE 1s]
+Four.
+[PAUSE 1s]
+Five.
+[PAUSE 1s]
+Six.
+[PAUSE 1s]
+Seven.
+[PAUSE 1s]
+Eight.
+
+[soft]
+Again. In.
+[PAUSE 1s]
+Two.
+[PAUSE 1s]
+Three.
+[PAUSE 1s]
+Four.
+[PAUSE 1s]
+Out.
+[PAUSE 1s]
+Two.
+[PAUSE 1s]
+Three.
+[PAUSE 1s]
+Four.
+[PAUSE 1s]
+Five.
+[PAUSE 1s]
+Six.
+[PAUSE 1s]
+Seven.
+[PAUSE 1s]
+Eight.
+
+[PAUSE 2s]
 
 [soft]
 In, four.
@@ -503,27 +555,9 @@ Out.
 [BREATH OUT — 8s]
 
 [soft]
-In.
-[BREATH IN — 4s]
-Out.
-[BREATH OUT — 8s]
+Continue on your own.
 
-[soft]
-In.
-[BREATH IN — 4s]
-Out.
-[BREATH OUT — 8s]
-
-[soft]
-In.
-[BREATH IN — 4s]
-Out.
-[BREATH OUT — 8s]
-
-[soft]
-Continue on your own. About two more minutes.
-
-[PAUSE 120s]
+[PAUSE 60s]
 
 [soft]
 Stop. Notice.
