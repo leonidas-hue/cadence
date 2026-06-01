@@ -182,44 +182,44 @@ Good. Follow my count.
 
 [firmer]
 Breathe in.
-[PAUSE 1s]
+[PAUSE 2s]
 Two.
-[PAUSE 1s]
+[PAUSE 2s]
 Three.
-[PAUSE 1s]
+[PAUSE 2s]
 Four.
-[PAUSE 1s]
+[PAUSE 2s]
 And out.
-[PAUSE 1s]
+[PAUSE 2s]
 Two.
-[PAUSE 1s]
+[PAUSE 2s]
 Three.
-[PAUSE 1s]
+[PAUSE 2s]
 Four.
-[PAUSE 1s]
+[PAUSE 2s]
 Five.
-[PAUSE 1s]
+[PAUSE 2s]
 Six.
 
 [firmer]
 Again. In.
-[PAUSE 1s]
+[PAUSE 2s]
 Two.
-[PAUSE 1s]
+[PAUSE 2s]
 Three.
-[PAUSE 1s]
+[PAUSE 2s]
 Four.
-[PAUSE 1s]
+[PAUSE 2s]
 Out.
-[PAUSE 1s]
+[PAUSE 2s]
 Two.
-[PAUSE 1s]
+[PAUSE 2s]
 Three.
-[PAUSE 1s]
+[PAUSE 2s]
 Four.
-[PAUSE 1s]
+[PAUSE 2s]
 Five.
-[PAUSE 1s]
+[PAUSE 2s]
 Six.
 
 [PAUSE 2s]
@@ -249,7 +249,7 @@ Continue on your own. Four in, six out. I'll be quiet for a minute.
 
 Begin.
 
-[PAUSE 60s]
+[PAUSE 180s]
 
 [soft]
 Come back when you're ready.
@@ -581,70 +581,70 @@ Now the box. Follow my count.
 
 [firmer]
 Breathe in.
-[PAUSE 1s]
+[PAUSE 2s]
 Two.
-[PAUSE 1s]
+[PAUSE 2s]
 Three.
-[PAUSE 1s]
+[PAUSE 2s]
 Four.
-[PAUSE 1s]
+[PAUSE 2s]
 Hold.
-[PAUSE 1s]
+[PAUSE 2s]
 Two.
-[PAUSE 1s]
+[PAUSE 2s]
 Three.
-[PAUSE 1s]
+[PAUSE 2s]
 Four.
-[PAUSE 1s]
+[PAUSE 2s]
 And out.
-[PAUSE 1s]
+[PAUSE 2s]
 Two.
-[PAUSE 1s]
+[PAUSE 2s]
 Three.
-[PAUSE 1s]
+[PAUSE 2s]
 Four.
-[PAUSE 1s]
+[PAUSE 2s]
 Hold.
-[PAUSE 1s]
+[PAUSE 2s]
 Two.
-[PAUSE 1s]
+[PAUSE 2s]
 Three.
-[PAUSE 1s]
+[PAUSE 2s]
 Four.
 
-[PAUSE 1s]
+[PAUSE 2s]
 
 [firmer]
 Again. Breathe in.
-[PAUSE 1s]
+[PAUSE 2s]
 Two.
-[PAUSE 1s]
+[PAUSE 2s]
 Three.
-[PAUSE 1s]
+[PAUSE 2s]
 Four.
-[PAUSE 1s]
+[PAUSE 2s]
 Hold.
-[PAUSE 1s]
+[PAUSE 2s]
 Two.
-[PAUSE 1s]
+[PAUSE 2s]
 Three.
-[PAUSE 1s]
+[PAUSE 2s]
 Four.
-[PAUSE 1s]
+[PAUSE 2s]
 Out.
-[PAUSE 1s]
+[PAUSE 2s]
 Two.
-[PAUSE 1s]
+[PAUSE 2s]
 Three.
-[PAUSE 1s]
+[PAUSE 2s]
 Four.
-[PAUSE 1s]
+[PAUSE 2s]
 Hold.
-[PAUSE 1s]
+[PAUSE 2s]
 Two.
-[PAUSE 1s]
+[PAUSE 2s]
 Three.
-[PAUSE 1s]
+[PAUSE 2s]
 Four.
 
 [PAUSE 2s]
@@ -670,7 +670,7 @@ Now continue on your own. Four counts each side of the box. If you lose track, j
 
 Begin.
 
-[PAUSE 90s]
+[PAUSE 150s]
 
 [soft]
 Come back. Let your breath go normal.

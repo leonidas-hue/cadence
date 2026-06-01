@@ -9,10 +9,11 @@
       "description": "Calm, measured, grounded. Default voice.",
       "model": "eleven_multilingual_v2",
       "settings": {
-        "stability": 0.55,
+        "stability": 0.70,
         "similarity_boost": 0.75,
         "style": 0.15,
-        "use_speaker_boost": true
+        "use_speaker_boost": true,
+        "speed": 0.9
       }
     },
     "bella": {
@@ -22,10 +23,11 @@
       "description": "Warm, soft, steady. Alternative voice.",
       "model": "eleven_multilingual_v2",
       "settings": {
-        "stability": 0.55,
+        "stability": 0.70,
         "similarity_boost": 0.75,
         "style": 0.15,
-        "use_speaker_boost": true
+        "use_speaker_boost": true,
+        "speed": 0.9
       }
     }
   },

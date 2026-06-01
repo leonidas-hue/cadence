@@ -510,7 +510,7 @@ function renderQuestions(questions) {
         if (q.type === 'single_select') {
             inputHtml = `<div class="options">` + q.options.map(o => {
                 const sel = val !== undefined && val === o.v ? ' sel' : '';
-                return `<label class="opt${sel}" onclick="pick('${q.id}', ${JSON.stringify(o.v)})">
+                return `<label class="opt${sel}" onclick="pick('${q.id}', ${JSON.stringify(o.v).replace(/"/g, '&quot;')})">
                     <input type="radio" name="${q.id}" value="${o.v}">
                     <span class="odot"></span>
                     <span>${o.l}</span>

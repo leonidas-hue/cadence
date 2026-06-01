@@ -7,6 +7,9 @@
 audio_output/
 audio/pilot_output/
 
+# Persistent TTS clip cache — rebuilt automatically on generation
+audio_output/.clip_cache/
+
 # Onboarding harness — generated artifacts
 state/
 onboarding.html

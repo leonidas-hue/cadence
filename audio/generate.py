@@ -80,6 +80,8 @@ def generate_one(
     model_id: str = DEFAULT_MODEL_ID,
     output_format: str = DEFAULT_OUTPUT_FORMAT,
     max_retries: int = 3,
+    use_cache: bool = True,
+    cache_dir: Optional[Path] = None,
 ) -> tuple[bool, Optional[str]]:
     """Generate a single audio file. Returns (success, error_message)."""
     # Treat an existing file as "done" only if it's a real audio file.
@@ -112,6 +114,8 @@ def generate_one(
             model_id=model_id,
             output_format=output_format,
             max_retries=max_retries,
+            use_cache=use_cache,
+            cache_dir=cache_dir,
         )
 
     rendered = render_for_tts(job.body_md)
@@ -132,6 +136,7 @@ def generate_one(
                     "similarity_boost": settings.get("similarity_boost", 0.75),
                     "style": settings.get("style", 0.15),
                     "use_speaker_boost": settings.get("use_speaker_boost", True),
+                    "speed": settings.get("speed", 1.0),
                 },
             )
             output_path.parent.mkdir(parents=True, exist_ok=True)
@@ -173,6 +178,8 @@ def generate_jobs(
     model_id: str = DEFAULT_MODEL_ID,
     api_key: Optional[str] = None,
     dry_run: bool = False,
+    use_cache: bool = True,
+    cache_dir: Optional[Path] = None,
 ) -> dict:
     """Generate audio for all jobs in both Adam and Bella voices (or just `voices`).
 
@@ -241,6 +248,8 @@ def generate_jobs(
                 voice_config=voice_config,
                 output_path=output_path,
                 model_id=model_id,
+                use_cache=use_cache,
+                cache_dir=cache_dir,
             )
             if success:
                 summary["generated"] += 1
@@ -277,6 +286,7 @@ if __name__ == "__main__":
 
     args = sys.argv[1:]
     dry_run = "--dry-run" in args
+    no_cache = "--no-cache" in args
 
     if "--all" in args:
         jobs_to_run = all_jobs
@@ -287,4 +297,4 @@ if __name__ == "__main__":
         print(f"PILOT RUN: Variant A week 1 ({len(jobs_to_run)} sessions)")
         print("Pass --all to generate the full library, --dry-run to skip API calls.\n")
 
-    generate_jobs(jobs_to_run, dry_run=dry_run)
+    generate_jobs(jobs_to_run, dry_run=dry_run, use_cache=not no_cache)
